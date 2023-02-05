@@ -2,10 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
+import { Text } from '@chakra-ui/react'
+import Link from 'next/link'
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
+export default function Home({post}) {
   return (
     <>
       <Head>
@@ -15,10 +15,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+        <Text bg={'red.400'} fontSize={'3xl'} textAlign={'center'}>Hello it is from chakra ui</Text>
+        <Link href={'login'}>Login</Link>
+        {post.map((data) => {
+        return (
+      <li key={data.id}>{data.title}</li>
+      )})}
       </main>
     </>
   )
+}
+
+
+export async function getServerSideProps(context) {
+  const res=await fetch('http://localhost:3000/api/hello')
+  const data=await res.json()
+  return {
+    props: {post:data}, // will be passed to the page component as props
+  }
 }
