@@ -48,7 +48,7 @@ export default function Signup() {
   return (
     <div className={styles.main_div}>
     <div className={styles.form_div}>
-    <h3>Login</h3>
+    <h3>Signup</h3>
     <form onSubmit={handleSubmit}>
       <Flex flexDirection={'column'}>
       <label >Email</label>
