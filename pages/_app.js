@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
   return(
     <ChakraProvider>
-    {router.pathname !== "/login" && <Header />}
+    {router.pathname !== "/login" && router.pathname !== "/"  && <Header />}
     <Component {...pageProps} />
     </ChakraProvider>
   )
