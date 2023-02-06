@@ -40,6 +40,7 @@ export default function Login() {
 
   return (
     <div className={styles.main_div}>
+    <img src='/login_img/bac.jpg'/>
     <div className={styles.form_div}>
     <h3>Login</h3>
     <form onSubmit={handleSubmit}>
