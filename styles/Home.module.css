@@ -25,4 +25,36 @@ border-radius: 0px;
   display: inherit;
 }
 
+.posts{
+  height: 94vh;
+  border: 2px solid;
+  width: 80%;
+  margin: auto;
+}
+
+.postQuery{
+
+  border: 2px solid;
+  width: 50%;
+  margin:2px auto;
+  height: 6vh;
+  border-radius: 3px;
+}
+
+.postInput{
+  width: 100%;
+  height: 100%;
+}
+
+
+.mainPage{
+  background-image: url('/img/front_bac.jpg');
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+}
+
 
