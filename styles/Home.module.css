@@ -1,3 +1,8 @@
+/* .logo{
+  border: 2px solid gainsboro;
+  height: 5vh;
+  width: 8hw;
+} */
 
 .main_div{
 width: 100vw;
@@ -50,6 +55,7 @@ border-radius: 0px;
 .mainPage{
   background-image: url('/img/front_bac.jpg');
   position: absolute;
+  color: antiquewhite;
   top: 0;
   z-index: -1;
   width: 100vw;
@@ -57,4 +63,104 @@ border-radius: 0px;
   opacity: 1;
 }
 
+.center{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 3px;
+  /* border: 2px solid white; */
+  color: aqua;
+  margin-top: 20vh;
+  height: 60vh
+}
 
+.innerbox_even{
+  height: 12vh;
+  border: 2px solid rgb(75, 189, 237);
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  box-shadow: 5px 7px 10px rgba(0,0,0,0.7);
+}
+
+/* .innerbox_odd div{
+  color: azure;
+} */
+
+.para{
+  /* border: 2px solid rgb(235, 12, 239); */
+  color: azure;
+  margin-left: 0.5vw;
+width: 25vw;}
+
+.innerbox_odd{
+  height: 12vh;
+  border: 2px solid rgb(6, 227, 76);
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  align-items: end;
+  box-shadow: 5px 7px 10px rgba(0,0,0,0.7);
+}
+
+.inner1{
+  /* display: flex; */
+/* padding-left: 2vw; */
+height: 100%;
+width: 6vw;
+font-size: 0.9rem;
+border: 2px solid rgb(64, 171, 225);
+padding: 4px;
+}
+
+.inner2{
+  /* display: flex; */
+height: 100%;
+/* border: 2px solid red; */
+}
+
+.post_date{
+  border: 2px solid rgb(194, 234, 36);
+  position: relative;
+  width: 20vh;
+  /* top: 8vh; */
+  /* align-items:right; */
+}
+
+.nav{
+width: 25vh;
+border: 2px solid grey;
+position: absolute;
+font-size: larger;
+font-family: Georgia, 'Times New Roman', Times, serif;
+top: 25vh;
+background: rgb(2, 23, 18,0.7);
+box-shadow: 5px 7px 10px rgba(0,0,0,0.7);
+}
+.nav ul{
+  list-style: none;
+  position: relative;
+  /* align-items: center;
+  padding: 10px 30px;
+  height: 30vh;   */
+}
+
+.nav ul li a{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 4vh;
+  /* width: 100%; */
+  text-decoration: none;
+  transition: 0.5s ease;
+  padding: 10px 30px;
+  height: 9vh;
+  border-radius: 0px, 50px;
+}
+
+.nav ul li a:hover{
+ background: rgba(0,0,0,0.5);
+ 
+
+}

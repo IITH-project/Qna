@@ -6,16 +6,17 @@ import { Box, Container, Input, InputGroup, InputLeftElement, Text } from '@chak
 import Link from 'next/link'
 import React, { useState } from 'react'
 import Loding from '@/components/Loding'
-import {Search2Icon} from '@chakra-ui/icons'
+import { Search2Icon } from '@chakra-ui/icons'
 
-export default function Home({post}) {
+export default function Home({ post }) {
   const [loading, setloading] = useState(false)
   const [search, setsearch] = useState()
 
-  const handleSubmit= async (e)=>{
+  const handleSubmit = async (e) => {
     setsearch(e.target.value)
     setloading(true)
   }
+  let list = [1, 2, 3, 4]
   return (
     <>
       <Head>
@@ -25,35 +26,91 @@ export default function Home({post}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.mainPage}>
-        <Box  m={'auto'} width={'80%'} position={'relative'} top='70px'>
+        <Box m={'auto'} width={'80%'} position={'relative'} top='70px'>
+          <nav className={styles.nav}>
+            <ul>
+              <li><a href="#">File</a></li>
+              <li><a href="#">Edit</a></li>
+              <li><a href="#">Selection</a></li>
+              <li><a href="#">Tools</a></li>
+            </ul>
+          </nav>
           <div className={styles.postQuery}>
-          <InputGroup border='1px' borderRadius={'8px'} >
-          <InputLeftElement
-            pointerEvents="none"
-            children={<Search2Icon color="gray.300" />}
-          />
-          <Input type="text" placeholder='Enter your query' value={search} onChange={handleSubmit}  required/>
-        </InputGroup>
+            <InputGroup border='1px' borderRadius={'8px'} >
+              <InputLeftElement
+                pointerEvents="none"
+                children={<Search2Icon color="gray.300" />}
+              />
+              <Input type="text" placeholder='Enter your query' value={search} onChange={handleSubmit} required />
+            </InputGroup>
+            <div className={styles.center}>
+
+              {
+                list.map((data, index) => {
+                  return (index % 2 == 0 ? (<div className={styles.innerbox_even}>
+                    <div className={styles.inner1}>
+                      <div>20 Votes</div>
+                      <div> 4 Answers</div>
+                      <div>342 Views</div>
+                    </div>
+                    <div className={styles.inner2}>
+                      <div className={styles.para}>This is Title-1</div>
+                      <div className={styles.para}>This is Post of that person</div>
+                    </div>
+                    <div className={styles.post_date}>
+                      posted on:
+                    </div>
+                  </div>) : (<div className={styles.innerbox_odd}>
+                    <div className={styles.inner1}>
+                      <div>20 Votes</div>
+                      <div> 4 Answers</div>
+                      <div>342 Views</div>
+                    </div>
+                    <div className={styles.inner2}>
+                      <div className={styles.para}>This is Title-1</div>
+                      <div className={styles.para}>This is Post of that person</div>
+                    </div>
+                    <div className={styles.post_date}>
+                      posted on:
+                    </div>
+                  </div>))
+                })
+              }
 
 
-            {loading && <Loding/>}
+              {/* <div className={styles.innerbox}>
+          This is box-2
+          <div className={styles.post_date}>
+            posted on:
           </div>
-        {post.map((data) => {
-        return (
-      <li key={data.id}>{data.title}</li>
-      )})}
-      </Box>
+          </div>
+          <div className={styles.innerbox}>
+          This is box-3
+          <div className={styles.post_date}>
+            posted on:
+          </div>
+          </div>
+          <div className={styles.innerbox}>
+          This is box-4
+          <div className={styles.post_date}>
+            posted on:
+          </div>
+          </div> */}
+            </div>
+            {loading && <Loding />}
+          </div>
+        </Box>
       </main>
-      
+
     </>
   )
 }
 
 
 export async function getServerSideProps(context) {
-  const res=await fetch('http://localhost:3000/api/hello')
-  const data=await res.json()
+  const res = await fetch('http://localhost:3000/api/hello')
+  const data = await res.json()
   return {
-    props: {post:data}, // will be passed to the page component as props
+    props: { post: data }, // will be passed to the page component as props
   }
 }
