@@ -37,7 +37,7 @@ z-index: -1;
   border: 2px solid;
   width: 50%;
   margin:2px auto;
-  height: 6vh;
+  height: 50px;
   border-radius: 3px;
 }
 
@@ -55,6 +55,33 @@ z-index: -1;
   width: 100vw;
   height: 100vh;
   opacity: 1;
+  color: white;
 }
+
+.fontPageColor{
+  color:  white;
+}
+
+.searcHere{
+  width: 100%;
+  color: black;
+}
+
+
+  .App {
+    font-family: sans-serif;
+    font-weight:800;
+    font-size:40px;
+    text-align: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /* min-height:100vh; */
+    /* background:green; */
+  }
+
+ 
+
+
 
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '@/styles/frame1.module.css'
 import Link from 'next/link'
+import Typing from '@/components/Typewriting'
 
 const Home = (props) => {
   return (
@@ -45,7 +46,10 @@ const Home = (props) => {
           <span>Contact</span>
         </span>
         </div>
-
+        <div className={styles.Typing}>
+          <h1 className={styles.develop}>Developers</h1>
+        <Typing/>
+        </div>
         <img
           src="/img/Discussion.png"
           alt="IMAGE551621566"
@@ -62,6 +66,7 @@ const Home = (props) => {
             the product of the activity of learners.”
           </span>
         </span>
+
         <img
           src="/img/Ellipse 1.png"
           alt="Ellipse11669"

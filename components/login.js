@@ -20,7 +20,7 @@ export default function Login() {
       email,
       password
     })
-    console.log(data)
+    // console.log(data)
     if(data.error){
       toast({
         title: data.message,
@@ -31,10 +31,10 @@ export default function Login() {
       })
     }
     else{
-    localStorage.setItem("userData",JSON.stringify(data))
+    localStorage.setItem("userData",JSON.stringify(data[0]))
     setemail('')
     setpassword('')
-    Router.push('/')
+    Router.push('/frontPage')
     }
   }
 
