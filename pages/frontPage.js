@@ -27,12 +27,13 @@ export default function Home({ post }) {
       </Head>
       <main className={styles.mainPage}>
         <Box m={'auto'} width={'80%'} position={'relative'} top='70px'>
+
           <nav className={styles.nav}>
             <ul>
-              <li><a href="#">File</a></li>
-              <li><a href="#">Edit</a></li>
-              <li><a href="#">Selection</a></li>
-              <li><a href="#">Tools</a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact Us</a></li>
             </ul>
           </nav>
           <div className={styles.postQuery}>

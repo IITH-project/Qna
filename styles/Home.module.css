@@ -39,7 +39,7 @@ border-radius: 0px;
 
 .postQuery{
 
-  border: 2px solid;
+  /* border: 2px solid; */
   width: 50%;
   margin:2px auto;
   height: 6vh;
@@ -71,7 +71,8 @@ border-radius: 0px;
   /* border: 2px solid white; */
   color: aqua;
   margin-top: 20vh;
-  height: 60vh
+  height: 60vh;
+  width: 50vw;
 }
 
 .innerbox_even{
@@ -79,8 +80,9 @@ border-radius: 0px;
   border: 2px solid rgb(75, 189, 237);
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  /* align-items: end; */
   box-shadow: 5px 7px 10px rgba(0,0,0,0.7);
+  border-radius: 40px 0px;
 }
 
 /* .innerbox_odd div{
@@ -99,18 +101,25 @@ width: 25vw;}
   display: flex;
   /* flex-direction: column; */
   justify-content: space-between;
-  align-items: end;
+  /* align-items: end; */
   box-shadow: 5px 7px 10px rgba(0,0,0,0.7);
+  border-radius: 40px 0px;
 }
 
 .inner1{
   /* display: flex; */
 /* padding-left: 2vw; */
 height: 100%;
-width: 6vw;
+width: 8vw;
 font-size: 0.9rem;
 border: 2px solid rgb(64, 171, 225);
-padding: 4px;
+padding: 10px 26px ;
+border-radius: 40px 0px;
+}
+
+.inner1:hover{
+  background: rgba(219, 215, 215, 0.1);
+  transition: 0.3s ease-in;
 }
 
 .inner2{
@@ -120,16 +129,19 @@ height: 100%;
 }
 
 .post_date{
-  border: 2px solid rgb(194, 234, 36);
+  /* border: 2px solid rgb(194, 234, 36); */
   position: relative;
-  width: 20vh;
-  /* top: 8vh; */
+  width: 25vh;
+  margin-bottom: 2px;
+  border-radius: 0px 0px 40px 0px;
+  top: 8vh;
   /* align-items:right; */
 }
 
 .nav{
 width: 25vh;
-border: 2px solid grey;
+/* border: 2px solid grey; */
+border-radius: 50px 0px;
 position: absolute;
 font-size: larger;
 font-family: Georgia, 'Times New Roman', Times, serif;
@@ -160,7 +172,6 @@ box-shadow: 5px 7px 10px rgba(0,0,0,0.7);
 }
 
 .nav ul li a:hover{
- background: rgba(0,0,0,0.5);
- 
-
+ background: rgba(64, 55, 55, 0.5);
+ border-radius: 50px 0px;
 }
