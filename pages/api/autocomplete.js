@@ -2,7 +2,7 @@ import pool  from "../../db"
 
 export default async function handler(req, res) {
     let a=req.body.name
-    let query=`select display_name from users where display_name ~* '${a}'
+    let query=`select id,display_name from users where display_name ~* '${a}'
      LIMIT 10;`
 
   pool.query(query, (error, results) => {

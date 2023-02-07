@@ -2,10 +2,14 @@ import React from 'react'
 import styles from '@/styles/frame1.module.css'
 import Link from 'next/link'
 import Typing from '@/components/Typewriting'
+import { motion as m,AnimatePresence } from "framer-motion"
 
 const Home = (props) => {
   return (
-    <div >
+    <AnimatePresence>
+    <m.div initial={{y:-10}} animate={{y:0}} transition={{duration:0.55,ease:"easeOut"}}
+    exit={{y:-1000}}
+    >
       <div className={styles['frame1']}>
         <img
           src="/img/home_bac.png"
@@ -81,10 +85,11 @@ const Home = (props) => {
           className={styles['rectangle6']}
         />
         <span className={styles['text14']}>
-          <Link href='/frontPage'>Try Now</Link>
+          <Link href='/frontPage/h'>Try Now</Link>
         </span>
       </div>
-    </div>
+    </m.div>
+    </AnimatePresence>
   )
 }
 

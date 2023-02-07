@@ -80,6 +80,11 @@ z-index: -1;
     /* background:green; */
   }
 
+  .cardFront{
+    background-color: rgb(135, 135, 135);
+    border: 2px solid red;
+  }
+
  
 
 

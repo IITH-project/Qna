@@ -36,6 +36,7 @@ export default function SearchModal() {
   const [loading, setloading] = useState(false)
   const [search, setsearch] = useState()
   const [searchData, setsearchData] = useState([])
+  const [value, setValue] = useState('1')
 
 
 
@@ -51,6 +52,7 @@ export default function SearchModal() {
     }
     setloading(false)
   }
+  console.log(value)
 
   
   return (
@@ -76,14 +78,14 @@ export default function SearchModal() {
           />
           <Input h={'3rem'} type="text" placeholder='Enter your query' value={search} onKeyUp={handleSubmit} onChange={(e)=>{setsearch(e.target.value)}}  required/>
         </InputGroup>
-          {/* <ModalCloseButton /> */}
+        <RadioGroup onChange={setValue} value={value}>
+      <Stack direction='row'>
+        <Radio value='1'>username</Radio>
+        <Radio value='2'>Tag</Radio>
+      </Stack>
+    </RadioGroup>
           <ModalBody>
 
-            
-          {/* { loading ? (<Loding/>):(searchData.map((data,index) => {
-        return (
-      <li  key={index}>{data.display_name}</li>
-      )}))} */}
 
 <Card>
   <CardHeader>
@@ -95,7 +97,7 @@ export default function SearchModal() {
         { loading? (<Loding/>):( searchData.map((data,index)=>{ 
             return (<Box key={index}>
         <Text pt='2' fontSize='sm'>
-            <Link href={`/posts/${data.display_name}`}>{data.display_name}</Link>
+            <Link onClick={onClose} href={`/frontPage/${data.id}`}>{data.display_name}</Link>
         </Text>
       </Box>)}))}
     </Stack>
