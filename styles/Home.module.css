@@ -185,3 +185,8 @@ box-shadow: 5px 7px 10px rgba(0,0,0,0.7);
  background: rgba(64, 55, 55, 0.5);
  border-radius: 50px 0px;
 }
+
+
+.signup{
+  text-decoration: underline;
+}

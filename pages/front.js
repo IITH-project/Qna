@@ -98,7 +98,6 @@ export default function Home({ post }) {
           </div>
           </div> */}
             </div>
-            {loading && <Loding />}
           </div>
         </Box>
       </main>
@@ -108,10 +107,10 @@ export default function Home({ post }) {
 }
 
 
-export async function getServerSideProps(context) {
-  const res = await fetch('http://localhost:3000/api/hello')
-  const data = await res.json()
-  return {
-    props: { post: data }, // will be passed to the page component as props
-  }
-}
+// export async function getServerSideProps(context) {
+//   const res = await fetch('http://localhost:3000/api/hello')
+//   const data = await res.json()
+//   return {
+//     props: { post: data }, // will be passed to the page component as props
+//   }
+// }

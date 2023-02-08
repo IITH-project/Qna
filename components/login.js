@@ -8,10 +8,12 @@ import { AiFillApple } from 'react-icons/Ai';
 import axios from 'axios';
 import Router from 'next/router';
 import { useToast } from '@chakra-ui/react'
+import Signup from './Signup';
 export default function Login() {
   const [email, setemail] = useState()
   const [password, setpassword] = useState()
   const toast =useToast()
+  const [signup, setsignup] = useState(false)
 
 
   const handleSubmit= async (e)=>{
@@ -38,11 +40,16 @@ export default function Login() {
     }
   }
 
+  const signUp=()=>{
+    setsignup(!signup)
+  }
+
   return (
     <div className={styles.main_div}>
-    <img src='/login_img/bac.jpg'/>
+    {/* <img src='/login_img/bac.jpg'/> */}
     <div className={styles.form_div}>
-    <h3>Login</h3>
+    {signup ? (<Signup/>):(<>
+      <h3>Login</h3>
     <form onSubmit={handleSubmit}>
       <Flex flexDirection={'column'}>
       <label >Email</label>
@@ -76,9 +83,11 @@ export default function Login() {
                 Login
               </Button>
     </form>
+    
+    </>)}
     <small>or</small>
     <div className={styles.inline}><FcGoogle/> <FaFacebook/> <AiFillApple/></div>
-    <small>Don't have account Signup</small>
+    <small>Don't have account <button className={styles.signup} onClick={signUp}>{signup?"Login":"Signup"}</button></small>
     </div>
 </div>
   )
