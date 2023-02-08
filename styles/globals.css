@@ -1,0 +1,17 @@
+.logo{
+    border: 2px solid blue;
+    width: 7vw;
+    height: 9vh;
+    border-radius: 5vh 7vh;
+    /* position: absolute; */
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: fantasy;
+    background: #0a1543;
+    color: antiquewhite;
+    margin-top: 4vh;
+    margin-left: 3vw ;
+  }

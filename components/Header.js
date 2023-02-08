@@ -65,8 +65,7 @@ export default function Header() {
     <>
       <Box  px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box color={'white'}>Logo</Box>
-
+        <div className='logo'> QnA </div>
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
               {

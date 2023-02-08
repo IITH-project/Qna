@@ -1,0 +1,976 @@
+.desktop1 {
+    width: 100%;
+    height: 1080px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    background-color: rgba(255, 255, 255, 0.9100000262260437);
+  }
+  .wp6553085bluegreenwallpapers1 {
+    top: 0px;
+    left: 0px;
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .ellipse1 {
+    top: 53px;
+    left: 74px;
+    width: 252px;
+    height: 103px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .text {
+    top: 54px;
+    left: 133px;
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    position: absolute;
+    font-size: 74px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: center;
+    font-family: Spicy Rice;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .frame-search-bar {
+    top: 87px;
+    left: 621px;
+    width: 677px;
+    height: 35px;
+    display: flex;
+    position: absolute;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    flex-direction: column;
+  }
+  .content {
+    display: flex;
+    padding: 8px;
+    position: relative;
+    align-self: stretch;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: transparent;
+    border-radius: 10px;
+    background-color: var(--dl-color-systemmaterials-smlthick);
+  }
+  .frame-magnifyingglass {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    margin-right: 0px;
+  }
+  .text02 {
+    color: var(--dl-color-labelcolors-lclsecondary);
+    width: 28px;
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    align-self: auto;
+    font-style: Medium;
+    text-align: center;
+    font-family: SF Pro Display;
+    font-weight: 500;
+    line-height: 50px;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text04 {
+    color: rgba(10, 122, 255, 1);
+    height: auto;
+    flex-grow: 1;
+    align-self: auto;
+    text-align: left;
+    line-height: 22px;
+    margin-right: 0px;
+    margin-bottom: 0;
+  }
+  .text05 {
+    color: var(--dl-color-useraccentcolor-uaclight);
+  }
+  .frame-mic {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+  }
+  .group {
+    top: 0px;
+    left: 0px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .group1 {
+    top: 2px;
+    left: 5px;
+    width: 14px;
+    height: 19px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .group2 {
+    top: 0px;
+    left: 0px;
+    width: 14px;
+    height: 19px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    border-radius: 0px 0px 0px 0px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .vector {
+    top: 0px;
+    left: 4px;
+    width: 6px;
+    height: 12px;
+    position: absolute;
+  }
+  .vector1 {
+    top: 9px;
+    left: 0px;
+    width: 14px;
+    height: 10px;
+    position: absolute;
+  }
+  .ellipse2 {
+    top: 36px;
+    left: 1476px;
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .text07 {
+    top: 44px;
+    left: 1615px;
+    color: rgba(255, 255, 255, 1);
+    width: 159px;
+    height: auto;
+    position: absolute;
+    font-size: 26px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: center;
+    font-family: Spicy Rice;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .rectangle7 {
+    top: 86px;
+    left: 1644px;
+    width: 244px;
+    height: 36px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .text09 {
+    top: 87px;
+    left: 1645px;
+    color: rgba(0, 0, 0, 1);
+    width: 243px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Spectral SC;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text11 {
+    top: 282px;
+    left: 88px;
+    color: rgba(255, 255, 255, 1);
+    width: 223px;
+    height: auto;
+    position: absolute;
+    font-size: 30px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Spectral SC;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text13 {
+    top: 360px;
+    left: 88px;
+    color: rgba(255, 255, 255, 1);
+    width: 223px;
+    height: auto;
+    position: absolute;
+    font-size: 30px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Spectral SC;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text15 {
+    top: 429px;
+    left: 129px;
+    color: rgba(255, 255, 255, 1);
+    width: 137px;
+    height: auto;
+    position: absolute;
+    font-size: 25px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Spectral SC;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text17 {
+    top: 481px;
+    left: 129px;
+    color: rgba(255, 255, 255, 1);
+    width: 137px;
+    height: auto;
+    position: absolute;
+    font-size: 25px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Spectral SC;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text19 {
+    top: 533px;
+    left: 129px;
+    color: rgba(255, 255, 255, 1);
+    width: 182px;
+    height: auto;
+    position: absolute;
+    font-size: 25px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Spectral SC;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .pngaaa1 {
+    top: 36px;
+    left: 1476px;
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .frame1 {
+    top: 267px;
+    left: 360px;
+    width: 1369px;
+    height: 813px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: rgba(0, 0, 0, 0.10000000149011612);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    background-color: rgba(229, 229, 229, 1);
+  }
+  .rectangle8 {
+    top: 0px;
+    left: 0px;
+    width: 1369px;
+    height: 189px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .rectangle9 {
+    top: 189px;
+    left: 0px;
+    width: 1369px;
+    height: 148px;
+    opacity: 0.50;
+    position: absolute;
+    border-color: transparent;
+  }
+  .rectangle12 {
+    top: 498px;
+    left: 1px;
+    width: 1369px;
+    height: 148px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .rectangle10 {
+    top: 337px;
+    left: 0px;
+    width: 1369px;
+    height: 161px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .rectangle11 {
+    top: 482.5px;
+    left: 0px;
+    width: 1369px;
+    height: 326px;
+    position: absolute;
+  }
+  .text21 {
+    top: 19px;
+    color: rgba(0, 0, 0, 1);
+    width: 383px;
+    height: auto;
+    position: absolute;
+    font-size: 54px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Spectral;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .rectangle13 {
+    top: 118px;
+    left: 23px;
+    width: 111px;
+    height: 42px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .text23 {
+    top: 133px;
+    left: 158px;
+    color: rgba(0, 0, 0, 1);
+    width: 88px;
+    height: auto;
+    position: absolute;
+    font-size: 22px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .rectangle14 {
+    top: 125px;
+    left: 898px;
+    width: 117px;
+    height: 44px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .rectangle15 {
+    top: 125px;
+    left: 1045px;
+    width: 117px;
+    height: 44px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .rectangle16 {
+    top: 125px;
+    left: 1192px;
+    width: 117px;
+    height: 44px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .text25 {
+    top: 125px;
+    left: 898px;
+    color: rgba(0, 0, 0, 1);
+    width: 117px;
+    height: auto;
+    position: absolute;
+    font-size: 24px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Spectral;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text27 {
+    top: 125px;
+    left: 898px;
+    color: rgba(0, 0, 0, 1);
+    width: 117px;
+    height: auto;
+    position: absolute;
+    font-size: 24px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Spectral;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .ellipse3 {
+    top: 248px;
+    left: 23px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .ellipse4 {
+    top: 407px;
+    left: 23px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .ellipse5 {
+    top: 557px;
+    left: 23px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .ellipse6 {
+    top: 716px;
+    left: 23px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .text29 {
+    top: 125px;
+    left: 1045px;
+    color: rgba(0, 0, 0, 1);
+    width: 117px;
+    height: auto;
+    position: absolute;
+    font-size: 24px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: center;
+    font-family: Spectral;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text31 {
+    top: 125px;
+    left: 1192px;
+    color: rgba(0, 0, 0, 1);
+    width: 117px;
+    height: auto;
+    position: absolute;
+    font-size: 24px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: center;
+    font-family: Spectral;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text33 {
+    top: 65px;
+    left: 897px;
+    color: rgba(0, 0, 0, 1);
+    width: 174px;
+    height: auto;
+    position: absolute;
+    font-size: 36px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text35 {
+    top: 209px;
+    left: 158px;
+    color: rgba(0, 0, 0, 1);
+    width: 76px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text37 {
+    top: 373px;
+    left: 158px;
+    color: rgba(0, 0, 0, 1);
+    width: 76px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text39 {
+    top: 523px;
+    left: 166px;
+    color: rgba(0, 0, 0, 1);
+    width: 76px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text41 {
+    top: 682px;
+    left: 166px;
+    color: rgba(0, 0, 0, 1);
+    width: 76px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text43 {
+    top: 246px;
+    left: 158px;
+    color: rgba(0, 0, 0, 1);
+    width: 95px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text45 {
+    top: 410px;
+    left: 158px;
+    color: rgba(0, 0, 0, 1);
+    width: 95px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text47 {
+    top: 560px;
+    left: 166px;
+    color: rgba(0, 0, 0, 1);
+    width: 95px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text49 {
+    top: 719px;
+    left: 166px;
+    color: rgba(0, 0, 0, 1);
+    width: 95px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text51 {
+    top: 284px;
+    left: 158px;
+    color: rgba(0, 0, 0, 1);
+    width: 76px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text53 {
+    top: 448px;
+    left: 158px;
+    color: rgba(0, 0, 0, 1);
+    width: 76px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text55 {
+    top: 598px;
+    left: 166px;
+    color: rgba(0, 0, 0, 1);
+    width: 76px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text57 {
+    top: 757px;
+    left: 166px;
+    color: rgba(0, 0, 0, 1);
+    width: 76px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .rectangle17 {
+    top: 250px;
+    left: 80px;
+    width: 62px;
+    height: 22px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .rectangle18 {
+    top: 414px;
+    left: 80px;
+    width: 62px;
+    height: 22px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .rectangle19 {
+    top: 564px;
+    left: 88px;
+    width: 62px;
+    height: 22px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .rectangle20 {
+    top: 723px;
+    left: 88px;
+    width: 62px;
+    height: 22px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .text59 {
+    top: 307px;
+    left: 1015px;
+    color: rgba(0, 0, 0, 1);
+    width: 120px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text61 {
+    top: 463px;
+    left: 1015px;
+    color: rgba(0, 0, 0, 1);
+    width: 120px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text63 {
+    top: 616px;
+    left: 1015px;
+    color: rgba(0, 0, 0, 1);
+    width: 120px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text65 {
+    top: 777px;
+    left: 1015px;
+    color: rgba(0, 0, 0, 1);
+    width: 120px;
+    height: auto;
+    position: absolute;
+    font-size: 21px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Space Grotesk;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .rectangle21 {
+    top: 329px;
+    left: 1135px;
+    width: 217px;
+    height: 31px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .rectangle22 {
+    top: 485px;
+    left: 1135px;
+    width: 217px;
+    height: 31px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .rectangle23 {
+    top: 638px;
+    left: 1135px;
+    width: 217px;
+    height: 31px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .rectangle24 {
+    top: 799px;
+    left: 1135px;
+    width: 217px;
+    height: 31px;
+    position: absolute;
+    border-color: transparent;
+  }
+  
