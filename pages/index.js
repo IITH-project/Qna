@@ -17,20 +17,20 @@ export default function Home({post}) {
       <main>
         <Text bg={'red.400'} fontSize={'3xl'} textAlign={'center'}>Hello it is from chakra ui</Text>
         <Link href={'login'}>Login</Link>
-        {post.map((data) => {
+        {/* {post.map((data) => {
         return (
       <li key={data.id}>{data.title}</li>
-      )})}
+      )})} */}
       </main>
     </>
   )
 }
 
 
-export async function getServerSideProps(context) {
-  const res=await fetch('http://localhost:3000/api/hello')
-  const data=await res.json()
-  return {
-    props: {post:data}, // will be passed to the page component as props
-  }
-}
+// export async function getServerSideProps(context) {
+//   const res=await fetch('http://localhost:3000/api/hello')
+//   // const data=await res.json()
+//   // return {
+//   //   props: {post:data}, // will be passed to the page component as props
+//   // }
+// }
