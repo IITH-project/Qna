@@ -19,6 +19,7 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 import Link from 'next/link';
 import Router from 'next/router';
+import SearchModal from '@/components/SearchModal'
 
 const NavLink = () => (
   <Link
@@ -66,6 +67,7 @@ export default function Header() {
       <Box  px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
         <div className='logo'> QnA </div>
+        <SearchModal/>
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
               {
@@ -97,7 +99,7 @@ export default function Header() {
                     <MenuDivider />
                     <Button onClick={handleLogin}>Logout</Button>
                   </MenuList>
-                </Menu>):(<Button onClick={()=>{Router.push('/login')}}>Login</Button>)
+                </Menu>):(<Button bgGradient="linear(to-r, teal.400, teal.600)" onClick={()=>{Router.push('/login')}}>Login</Button>)
               }
             </Stack>
           </Flex>

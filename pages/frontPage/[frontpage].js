@@ -10,7 +10,6 @@ import {Search2Icon} from '@chakra-ui/icons'
 import axios from 'axios'
 import SearchModal from '@/components/SearchModal'
 import { motion as m } from "framer-motion"
-import MultipleTag from '@/components/multipleTag'
 
 export default function Home({data}) {
   return (
@@ -25,10 +24,9 @@ export default function Home({data}) {
        
         <Box  m={'auto'} width={'60%'} position={'relative'} top='70px'>
           <div className={styles.postQuery}>
-          <SearchModal/>
+          {/* <SearchModal/> */}
           </div>
-          <Box maxHeight={'80vh'} overflow='auto'>
-          <MultipleTag/>
+          <Box maxHeight={'80vh'} overflow='auto' width={'100%'}>
           {data?.length > 0 ? (data.map((data)=>{
             return (<div key={data.id} className={styles.cardFront}>
               <Link href={`/posts/${data.id}`}>{data.title? data.title: <div>No title 😂 </div>}</Link>
@@ -47,7 +45,7 @@ export default function Home({data}) {
 
 
 export async function getServerSideProps(context) {
-  console.log(context.query.frontpage)
+  // console.log(context.query.frontpage)
   const res = await fetch(`http://127.0.0.1:3000/api/hello?search=${context.query.frontpage}`)
   const data = await res.json()
 

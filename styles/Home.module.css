@@ -53,15 +53,16 @@ border-radius: 0px;
 
 
 .mainPage{
-  background-image: url('/img/front_bac.jpg');
+  background-image: url('/img_2/background.jpg');
   position: absolute;
-  color: antiquewhite;
+  /* color: antiquewhite; */
   top: 0;
   z-index: -1;
   width: 100vw;
   height: 100vh;
   opacity: 1;
   color: white;
+  background-size: cover;
 }
 
 .fontPageColor{
@@ -189,4 +190,26 @@ box-shadow: 5px 7px 10px rgba(0,0,0,0.7);
 
 .signup{
   text-decoration: underline;
+}
+
+
+.App{
+  font-size: 63px;
+  font-weight:bolder;
+}
+
+/* for mutitag css */
+.list_item {
+  display: flex;
+  list-style: none;
+  border: 2px solid;
+  border-radius: 5px;
+  margin-right: 2px;
+  background-color: #53aeac;
+ 
+}
+.ul_item{
+  display: flex;
+  margin-left: 3px;
+  flex-wrap: wrap;
 }
