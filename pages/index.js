@@ -85,7 +85,7 @@ const Home = (props) => {
           className={styles['rectangle6']}
         />
         <span className={styles['text14']}>
-          <Link href='/frontPage/h'>Try Now</Link>
+          <Link href='/frontPage/1'>Try Now</Link>
         </span>
       </div>
     </m.div>

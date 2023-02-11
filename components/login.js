@@ -36,7 +36,7 @@ export default function Login() {
     localStorage.setItem("userData",JSON.stringify(data[0]))
     setemail('')
     setpassword('')
-    Router.push('/frontPage')
+    Router.back()
     }
   }
 

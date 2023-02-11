@@ -28,7 +28,6 @@ import axios from 'axios'
 import Loding from '@/components/Loding'
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
-import MultipleTag from './multipleTag'
 import {  CloseButton,  } from '@chakra-ui/react'
 
 
@@ -37,16 +36,19 @@ export default function SearchModal() {
   const [scrollBehavior, setScrollBehavior] = useState('inside')
   const [loading, setloading] = useState(false)
   const [search, setsearch] = useState()
+  const [search2, setsearch2] = useState()
   const [searchData, setsearchData] = useState([])
+  const [searchData2, setsearchData2] = useState([])
   const [value, setValue] = useState('1')
+
 
 
 
   const handleSubmit= async (e)=>{
     setloading(true)
-    // console.log(search)
     const {data}=await axios.post('/api/autocomplete',{
-      name:search
+      name:search,
+      value
     })
     setsearchData(data)
     if(search==''){
@@ -54,23 +56,38 @@ export default function SearchModal() {
     }
     setloading(false)
   }
+  const handleSubmit2= async (e)=>{
+    setloading(true)
+    const {data}=await axios.post('/api/autocomplete',{
+      name:search2,
+      value
+    })
+    setsearchData2(data)
+    if(search==''){
+      setsearchData2([])
+    }
+    setloading(false)
+  }
 
   const [tags, settags] = useState([])
 
   const removeTag=(indexTOremove)=>{
-    console.log(indexTOremove)
+    // console.log(indexTOremove)
     settags(tags.filter((_,index)=>index!=indexTOremove))
   }
 
-  const addTag=(e)=>{
+  const addTag=async (e)=>{
    if(e.target.value!=""){
     settags([...tags,e.target.value])
     e.target.value=""
    }
   }
 
+  const check3=async(e)=>{
+    settags([...tags,e.target.innerText])
+    setsearch2('')
+  }
 
-  
   return (
     <>
 
@@ -115,7 +132,9 @@ export default function SearchModal() {
                   }
                 </ul>}
                 />
-                 <Input color={'red'} type="text" placeholder='Press enter to add tag' onKeyUp={e=>(e.key=='Enter'? addTag(e):null)} />
+                 <Input color={'red'} type="text" value={search2} onChange={(e)=>{setsearch2(e.target.value)}} placeholder='Press enter to add tag'  onKeyUp={e=>{
+                  handleSubmit2
+                  (e.key=='Enter'? addTag(e):null)}} />
                  <Button position={'absolute'} right='3px' bgGradient="linear(to-r, teal.400, teal.600)" >Go</Button>
               </div>
             </div>)
@@ -129,7 +148,6 @@ export default function SearchModal() {
     </RadioGroup>
           <ModalBody>
 
-
 <Card>
   <CardHeader>
     <Heading size='md'>Search Results</Heading>
@@ -137,12 +155,19 @@ export default function SearchModal() {
 
   <CardBody>
     <Stack divider={<StackDivider />} spacing='4'>
-        { loading? (<Loding/>):( searchData.map((data,index)=>{ 
+          {value=='2'?(<>{ loading? (<Loding/>):( searchData2.map((data,index)=>{ 
+            return (<Box key={index}>
+        <Text pt='2' fontSize='sm'>
+            <Button  onClick={check3}>{data.tag_name}</Button>
+        </Text>
+      </Box>)}))}</>):(<>{ loading? (<Loding/>):( searchData.map((data,index)=>{ 
             return (<Box key={index}>
         <Text pt='2' fontSize='sm'>
             <Link onClick={onClose} href={`/frontPage/${data.id}`}>{data.display_name}</Link>
         </Text>
-      </Box>)}))}
+      </Box>)}))}</>)}
+
+        
     </Stack>
   </CardBody>
 </Card>

@@ -17,7 +17,7 @@ export default function App({ Component, pageProps,router }) {
       }
     }}>
     <ChakraProvider>
-    {router.pathname !== "/login" && router.pathname !== "/"  && <Header />}
+    {router.pathname !== "/login" && router.pathname !== "/" && router.pathname!=='/404' && <Header />}
     <Component {...pageProps} />
     </ChakraProvider>
     </motion.div>

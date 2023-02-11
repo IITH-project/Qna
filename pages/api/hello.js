@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   try {
     let a=req.query.search
   let queryPost
-  if(a=='h'){
+  if(a==1){
     queryPost=`select id,owner_display_name,title,body from posts limit 5`
   }
   else{

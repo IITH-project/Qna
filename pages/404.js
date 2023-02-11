@@ -5,7 +5,7 @@ export default function NotFound() {
 
     const router=useRouter()
     const checkREq=()=>{
-        router.push('/frontPage')
+        router.push('/')
     }
   return (
     <Box textAlign="center" py={10} px={6}>

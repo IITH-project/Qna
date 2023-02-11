@@ -37,13 +37,6 @@ export default function Home({ post }) {
             </ul>
           </nav>
           <div className={styles.postQuery}>
-            <InputGroup border='1px' borderRadius={'8px'} >
-              <InputLeftElement
-                pointerEvents="none"
-                children={<Search2Icon color="gray.300" />}
-              />
-              <Input type="text" placeholder='Enter your query' value={search} onChange={handleSubmit} required />
-            </InputGroup>
             <div className={styles.center}>
 
               {

@@ -12,6 +12,7 @@ import SearchModal from '@/components/SearchModal'
 import { motion as m } from "framer-motion"
 
 export default function Home({data}) {
+  
   return (
     <>
       <Head>
@@ -22,19 +23,95 @@ export default function Home({data}) {
       </Head>
       <m.main className={styles.mainPage} initial={{y:90}} animate={{y:0}} transition={{duration:0.55,ease:"easeOut"}}>
        
-        <Box  m={'auto'} width={'60%'} position={'relative'} top='70px'>
-          <div className={styles.postQuery}>
-          {/* <SearchModal/> */}
-          </div>
-          <Box maxHeight={'80vh'} overflow='auto' width={'100%'}>
-          {data?.length > 0 ? (data.map((data)=>{
-            return (<div key={data.id} className={styles.cardFront}>
-              <Link href={`/posts/${data.id}`}>{data.title? data.title: <div>No title 😂 </div>}</Link>
-              <h3>{data.owner_display_name? data.owner_display_name:<div>Anoynomys User😀</div>}</h3>
-              <div dangerouslySetInnerHTML={{ __html: data.body.substring(0,300) }} />
-            </div>)
-          })):<div>No post exits in database</div>}
+        <Box display={'flex'} mt='3em' h={'85%'}  position={'relative'} top='70px'>
+          <Box width={'13rem'}  mr={'2em'}>
+          <nav className={styles.nav}>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </nav>
           </Box>
+          <Box maxHeight={'80vh'}  overflow='auto' 
+          css={{
+            '&::-webkit-scrollbar': {
+              width: '4px',
+            },
+            '&::-webkit-scrollbar-track': {
+              width: '6px',
+            },
+          }}
+          
+          
+          boxSizing='border-box' padding='0 33px' width={'100%'}>
+          {data?.length > 0 ? data.map((data, index) => {
+                  return (index % 2 == 0 ? (<div className={styles.innerbox_even} key={index}>
+                    <div className={styles.inner1}>
+                      <div>20 Votes</div>
+                      <div> 4 Answers</div>
+                      <div>342 Views</div>
+                    </div>
+                    <div className={styles.inner2}>
+                      <div className={styles.para}>{data.title? data.title: <div>No title 😂 </div>}</div>
+                      <div className={styles.para}  dangerouslySetInnerHTML={{ __html: data.body.substring(0,300) }}/>
+                    </div>
+                    <div className={styles.post_date}>
+                      posted on:
+                    </div>
+                  </div>) : (<div className={styles.innerbox_odd} key={index}>
+                    <div className={styles.inner1}>
+                      <div>20 Votes</div>
+                      <div> 4 Answers</div>
+                      <div>342 Views</div>
+                    </div>
+                    <div className={styles.inner2}>
+                      <div className={styles.para}>{data.title? data.title: <div>No title 😂 </div>}</div>
+                      <div className={styles.para}  dangerouslySetInnerHTML={{ __html: data.body.substring(0,300) }}/>
+                    </div>
+                    <div className={styles.post_date}>
+                      posted on:
+                    </div>
+                  </div>))
+                }):<div>No post exits in database</div>}
+          </Box>
+
+          {/* {
+                data.map((data, index) => {
+                  return (index % 2 == 0 ? (<div className={styles.innerbox_even} key={index}>
+                    <div className={styles.inner1}>
+                      <div>20 Votes</div>
+                      <div> 4 Answers</div>
+                      <div>342 Views</div>
+                    </div>
+                    <div className={styles.inner2}>
+                      <div className={styles.para}>{data.title? data.title: <div>No title 😂 </div>}</div>
+                      <div className={styles.para}  dangerouslySetInnerHTML={{ __html: data.body.substring(0,300) }}/>
+                    </div>
+                    <div className={styles.post_date}>
+                      posted on:
+                    </div>
+                  </div>) : (<div className={styles.innerbox_odd} key={index}>
+                    <div className={styles.inner1}>
+                      <div>20 Votes</div>
+                      <div> 4 Answers</div>
+                      <div>342 Views</div>
+                    </div>
+                    <div className={styles.inner2}>
+                      <div className={styles.para}>{data.title? data.title: <div>No title 😂 </div>}</div>
+                      <div className={styles.para}  dangerouslySetInnerHTML={{ __html: data.body.substring(0,300) }}/>
+                    </div>
+                    <div className={styles.post_date}>
+                      posted on:
+                    </div>
+                  </div>))
+                })
+              } */}
+
+
+
+
 
       </Box>
       </m.main>
