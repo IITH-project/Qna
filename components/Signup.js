@@ -46,17 +46,15 @@ export default function Signup() {
   }
 
   return (
-    <div className={styles.main_div}>
-    <div className={styles.form_div}>
+    <>
     <h3>Signup</h3>
     <form onSubmit={handleSubmit}>
       <Flex flexDirection={'column'}>
       <label >Email</label>
       <InputGroup border='1px' borderRadius={'8px'} >
-          <InputLeftElement
+      <InputLeftElement
             pointerEvents="none"
-            children={<EmailIcon color="gray.300" />}
-          />
+          ><EmailIcon color="gray.300" /></InputLeftElement>
           <Input type="text" placeholder="example@gmail.com" value={email} onChange={e => setemail( e.target.value)} required/>
         </InputGroup>
     </Flex>
@@ -72,10 +70,7 @@ export default function Signup() {
                 Login
               </Button>
     </form>
-    <small>or</small>
-    <div className={styles.inline}><Box mx={'10px'}><FcGoogle size={30}/></Box> <Box mx={'10px'}><FaFacebook size={30}/></Box> <Box mx={'10px'}><AiFillApple size={30}/></Box></div>
-    <small>Don't have account Signup</small>
-    </div>
-</div>
+    
+    </>
   )
 }

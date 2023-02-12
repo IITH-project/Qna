@@ -1,10 +1,15 @@
 import React from 'react'
 import styles from '@/styles/frame1.module.css'
 import Link from 'next/link'
+import Typing from '@/components/Typewriting'
+import { motion as m,AnimatePresence } from "framer-motion"
 
 const Home = (props) => {
   return (
-    <div >
+    <AnimatePresence>
+    <m.div initial={{y:-10}} animate={{y:0}} transition={{duration:0.55,ease:"easeOut"}}
+    exit={{y:-1000}}
+    >
       <div className={styles['frame1']}>
         <img
           src="/img/home_bac.png"
@@ -45,7 +50,10 @@ const Home = (props) => {
           <span>Contact</span>
         </span>
         </div>
-
+        <div className={styles.Typing}>
+          <h1 className={styles.develop}>Developers</h1>
+        <Typing/>
+        </div>
         <img
           src="/img/Discussion.png"
           alt="IMAGE551621566"
@@ -62,6 +70,7 @@ const Home = (props) => {
             the product of the activity of learners.”
           </span>
         </span>
+
         <img
           src="/img/Ellipse 1.png"
           alt="Ellipse11669"
@@ -76,10 +85,11 @@ const Home = (props) => {
           className={styles['rectangle6']}
         />
         <span className={styles['text14']}>
-          <Link href='/frontPage'>Try Now</Link>
+          <Link href='/frontPage/1'>Try Now</Link>
         </span>
       </div>
-    </div>
+    </m.div>
+    </AnimatePresence>
   )
 }
 

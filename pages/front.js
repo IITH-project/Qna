@@ -37,13 +37,6 @@ export default function Home({ post }) {
             </ul>
           </nav>
           <div className={styles.postQuery}>
-            <InputGroup border='1px' borderRadius={'8px'} >
-              <InputLeftElement
-                pointerEvents="none"
-                children={<Search2Icon color="gray.300" />}
-              />
-              <Input type="text" placeholder='Enter your query' value={search} onChange={handleSubmit} required />
-            </InputGroup>
             <div className={styles.center}>
 
               {
@@ -98,7 +91,6 @@ export default function Home({ post }) {
           </div>
           </div> */}
             </div>
-            {loading && <Loding />}
           </div>
         </Box>
       </main>
@@ -108,10 +100,10 @@ export default function Home({ post }) {
 }
 
 
-export async function getServerSideProps(context) {
-  const res = await fetch('http://localhost:3000/api/hello')
-  const data = await res.json()
-  return {
-    props: { post: data }, // will be passed to the page component as props
-  }
-}
+// export async function getServerSideProps(context) {
+//   const res = await fetch('http://localhost:3000/api/hello')
+//   const data = await res.json()
+//   return {
+//     props: { post: data }, // will be passed to the page component as props
+//   }
+// }
