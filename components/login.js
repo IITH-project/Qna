@@ -4,7 +4,7 @@ import { Box, Button, Flex, FormControl, Input, InputGroup, InputLeftElement } f
 import {EmailIcon,LockIcon} from '@chakra-ui/icons'
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
-import { AiFillApple } from 'react-icons/Ai';
+import { AiFillApple } from 'react-icons/ai';
 import axios from 'axios';
 import Router from 'next/router';
 import { useToast } from '@chakra-ui/react'
@@ -49,20 +49,22 @@ export default function Login() {
     {/* <img src='/login_img/bac.jpg'/> */}
     <div className={styles.form_div}>
     {signup ? (<Signup/>):(<>
-      <h3>Login</h3>
+      {/* <h2 className={styles.login}>Login</h2> */}
+    <img className = {styles.fb_image} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtiAwA0x3IJ27dZZmKDrb5dgm3xitWJkpyrA&usqp=CAU" alt="fb_image"></img>
+    <h1 className={styles.welcome}>WELCOME</h1>
     <form onSubmit={handleSubmit}>
       <Flex flexDirection={'column'}>
-      <label >Email</label>
+      <label className={styles.name}>User ID</label>
       <InputGroup border='1px' borderRadius={'8px'} >
           <InputLeftElement
             pointerEvents="none"
             children={<EmailIcon color="gray.300" />}
           />
-          <Input type="text" placeholder="example@gmail.com" value={email} onChange={e => setemail( e.target.value)} required/>
+          <Input type="text" placeholder="user_id" value={email} onChange={e => setemail( e.target.value)} required/>
         </InputGroup>
     </Flex>
       <Flex flexDirection={'column'}>
-      <label >Password</label>
+      <label className={styles.name}>Password</label>
       <InputGroup border='1px' borderRadius={'8px'} >
           <InputLeftElement
             pointerEvents="none"
