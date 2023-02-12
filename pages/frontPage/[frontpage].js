@@ -12,7 +12,6 @@ import SearchModal from '@/components/SearchModal'
 import { motion as m } from "framer-motion"
 
 export default function Home({data}) {
-  
   return (
     <>
       <Head>
@@ -54,7 +53,7 @@ export default function Home({data}) {
                       <div>342 Views</div>
                     </div>
                     <div className={styles.inner2}>
-                      <div className={styles.para}>{data.title? data.title: <div>No title 😂 </div>}</div>
+                      <Link  className={styles.title} href={`/posts/${data.id}`} >{data.title? data.title: <div>No title 😂 </div>}</Link>
                       <div className={styles.para}  dangerouslySetInnerHTML={{ __html: data.body.substring(0,300) }}/>
                     </div>
                     <div className={styles.post_date}>
@@ -67,7 +66,7 @@ export default function Home({data}) {
                       <div>342 Views</div>
                     </div>
                     <div className={styles.inner2}>
-                      <div className={styles.para}>{data.title? data.title: <div>No title 😂 </div>}</div>
+                      <Link href={`/posts/${data.id}`} className={styles.title} >{data.title? data.title: <div>No title 😂 </div>}</Link>
                       <div className={styles.para}  dangerouslySetInnerHTML={{ __html: data.body.substring(0,300) }}/>
                     </div>
                     <div className={styles.post_date}>
@@ -76,43 +75,6 @@ export default function Home({data}) {
                   </div>))
                 }):<div>No post exits in database</div>}
           </Box>
-
-          {/* {
-                data.map((data, index) => {
-                  return (index % 2 == 0 ? (<div className={styles.innerbox_even} key={index}>
-                    <div className={styles.inner1}>
-                      <div>20 Votes</div>
-                      <div> 4 Answers</div>
-                      <div>342 Views</div>
-                    </div>
-                    <div className={styles.inner2}>
-                      <div className={styles.para}>{data.title? data.title: <div>No title 😂 </div>}</div>
-                      <div className={styles.para}  dangerouslySetInnerHTML={{ __html: data.body.substring(0,300) }}/>
-                    </div>
-                    <div className={styles.post_date}>
-                      posted on:
-                    </div>
-                  </div>) : (<div className={styles.innerbox_odd} key={index}>
-                    <div className={styles.inner1}>
-                      <div>20 Votes</div>
-                      <div> 4 Answers</div>
-                      <div>342 Views</div>
-                    </div>
-                    <div className={styles.inner2}>
-                      <div className={styles.para}>{data.title? data.title: <div>No title 😂 </div>}</div>
-                      <div className={styles.para}  dangerouslySetInnerHTML={{ __html: data.body.substring(0,300) }}/>
-                    </div>
-                    <div className={styles.post_date}>
-                      posted on:
-                    </div>
-                  </div>))
-                })
-              } */}
-
-
-
-
-
       </Box>
       </m.main>
       
@@ -122,11 +84,20 @@ export default function Home({data}) {
 
 
 export async function getServerSideProps(context) {
-  // console.log(context.query.frontpage)
-  const res = await fetch(`http://127.0.0.1:3000/api/hello?search=${context.query.frontpage}`)
-  const data = await res.json()
+  function containsOnlyNumbers(str) {
+    return /^[0-9]+$/.test(str);
+  }
 
-  // Pass data to the page via props
+if(containsOnlyNumbers(context.query.frontpage)==false){
+var {data} = await axios.post(`http://127.0.0.1:3000/api/searchbytags`,{
+      queryData:context.query.frontpage
+     })
+    }
+  
+  if(containsOnlyNumbers(context.query.frontpage)){
+    var {data}=await axios.get(`http://127.0.0.1:3000/api/hello?search=${context.query.frontpage}`)
+  }
+
   return { props: { data } }
 }
 

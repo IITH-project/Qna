@@ -56,18 +56,16 @@ export default function Login() {
       <InputGroup border='1px' borderRadius={'8px'} >
           <InputLeftElement
             pointerEvents="none"
-            children={<EmailIcon color="gray.300" />}
-          />
+          ><EmailIcon color="gray.300" /></InputLeftElement>
           <Input type="text" placeholder="example@gmail.com" value={email} onChange={e => setemail( e.target.value)} required/>
         </InputGroup>
     </Flex>
       <Flex flexDirection={'column'}>
       <label >Password</label>
       <InputGroup border='1px' borderRadius={'8px'} >
-          <InputLeftElement
+      <InputLeftElement
             pointerEvents="none"
-            children={<LockIcon color="gray.300" />}
-          />
+          ><EmailIcon color="gray.300" /></InputLeftElement>
           <Input type="password" placeholder="**********" value={password} onChange={e => setpassword( e.target.value)}  required/>
         </InputGroup>
     </Flex>
@@ -87,7 +85,7 @@ export default function Login() {
     </>)}
     <small>or</small>
     <div className={styles.inline}><FcGoogle/> <FaFacebook/> <AiFillApple/></div>
-    <small>Don't have account <button className={styles.signup} onClick={signUp}>{signup?"Login":"Signup"}</button></small>
+    <small>Do not have account <button className={styles.signup} onClick={signUp}>{signup?"Login":"Signup"}</button></small>
     </div>
 </div>
   )

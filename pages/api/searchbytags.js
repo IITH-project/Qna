@@ -8,7 +8,9 @@ function sleep(ms) {
 }
 
 export default async function handler(req, res) {
-    let a = ["comments"]
+  // console.log(req.body.queryData)
+    let a = (req.body.queryData).split('&')
+    // console.table(a)
     let b = []
     for(let i = 0 ; i < a.length ;i++){
       let mystring = "%"+a[i] + "%" ;
@@ -50,7 +52,7 @@ export default async function handler(req, res) {
       })
     }
     await sleep(10);
-    let finquery = "select id,body from posts where id in (select * from public.mytable)"
+    let finquery = "select id,body from posts where id in (select * from public.mytable) LIMIT 5"
     pool.query(finquery,(error, results) => {
       if (error) {
         throw error
