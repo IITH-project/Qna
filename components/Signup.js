@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/sign_up.module.css'
 import { Box, Button, Flex, FormControl, Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
 import {EmailIcon,LockIcon} from '@chakra-ui/icons'
 import { FcGoogle } from 'react-icons/fc';
@@ -47,9 +47,10 @@ export default function Signup() {
 
   return (
     <>
-    <h3>Signup</h3>
-    <form onSubmit={handleSubmit}>
-      <Flex flexDirection={'column'}>
+    {/* <img className = {styles.signup_image} src="signup.webp" alt="fb_image"></img> */}
+    <h3 className={styles.label}>Signup</h3>
+    <form className = {styles.form}onSubmit={handleSubmit}>
+      <Flex height={'18vh'} flexDirection={'column'} justifyContent={'space-between'}>
       <label >Email</label>
       <InputGroup border='1px' borderRadius={'8px'} >
           <InputLeftElement
@@ -57,6 +58,14 @@ export default function Signup() {
             children={<EmailIcon color="gray.300" />}
           />
           <Input type="text" placeholder="example@gmail.com" value={email} onChange={e => setemail( e.target.value)} required/>
+        </InputGroup>
+        <label >password</label>
+      <InputGroup border='1px' borderRadius={'8px'} >
+          <InputLeftElement
+            pointerEvents="none"
+            children={<EmailIcon color="gray.300" />}
+          />
+          <Input type="text" placeholder="********" value={password} onChange={e => setpassword( e.target.value)} required/>
         </InputGroup>
     </Flex>
     <Button
@@ -68,7 +77,7 @@ export default function Signup() {
                 mt={'0.5em'}
                 
               >
-                Login
+                Register
               </Button>
     </form>
     

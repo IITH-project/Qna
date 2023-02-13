@@ -50,9 +50,9 @@ export default function Login() {
     <div className={styles.form_div}>
     {signup ? (<Signup/>):(<>
       {/* <h2 className={styles.login}>Login</h2> */}
-    <img className = {styles.fb_image} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtiAwA0x3IJ27dZZmKDrb5dgm3xitWJkpyrA&usqp=CAU" alt="fb_image"></img>
+    <img className = {styles.fb_image} src="myimage.png" alt="fb_image"></img>
     <h1 className={styles.welcome}>WELCOME</h1>
-    <form onSubmit={handleSubmit}>
+    <form className = {styles.form} onSubmit={handleSubmit}>
       <Flex flexDirection={'column'}>
       <label className={styles.name}>User ID</label>
       <InputGroup border='1px' borderRadius={'8px'} >
@@ -60,7 +60,7 @@ export default function Login() {
             pointerEvents="none"
             children={<EmailIcon color="gray.300" />}
           />
-          <Input type="text" placeholder="user_id" value={email} onChange={e => setemail( e.target.value)} required/>
+          <Input  type="text" placeholder="user_id" backgroundColor={'#ffffff'}  value={email} onChange={e => setemail( e.target.value)} required/>
         </InputGroup>
     </Flex>
       <Flex flexDirection={'column'}>
@@ -70,7 +70,7 @@ export default function Login() {
             pointerEvents="none"
             children={<LockIcon color="gray.300" />}
           />
-          <Input type="password" placeholder="**********" value={password} onChange={e => setpassword( e.target.value)}  required/>
+          <Input type="password" placeholder="**********" backgroundColor={'#ffffff'} value={password} onChange={e => setpassword( e.target.value)}  required/>
         </InputGroup>
     </Flex>
     <Button
