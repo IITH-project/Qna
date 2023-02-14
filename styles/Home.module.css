@@ -226,7 +226,8 @@ box-shadow: 5px 7px 10px rgba(0,0,0,0.7);
 }
 .first_div_post{
   width: 79%;
-  padding: 0 68px;
+  margin: auto;
+  padding:  0 1.2em;
 }
 
 .right_bar_post{
