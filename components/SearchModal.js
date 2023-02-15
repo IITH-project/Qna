@@ -94,7 +94,7 @@ export default function SearchModal() {
       <Button
         h={"82%"}
         w="50%"
-        mt={"16px"}
+        mt={"31px"}
         bgGradient="linear(to-r, teal.400, teal.600)"
         onClick={onOpen}
         className={styles.searcHere}

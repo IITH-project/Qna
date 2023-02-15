@@ -64,7 +64,7 @@ export default function Header() {
   
   return (
     <>
-      <Box  px={4} position='sticky' top={'0'}>
+      <Box  px={5} position='sticky' top={'0'} h={'12vh'}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
         <div className='logo'> QnA </div>
         <SearchModal/>
