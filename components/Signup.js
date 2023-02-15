@@ -66,6 +66,14 @@ export default function Signup() {
           />
           <Input type="text" placeholder="****" value={password} onChange={e => setpassword( e.target.value)} required/>
         </InputGroup>
+        <label >password</label>
+      <InputGroup border='1px' borderRadius={'8px'} >
+          <InputLeftElement
+            pointerEvents="none"
+            children={<EmailIcon color="gray.300" />}
+          />
+          <Input type="text" placeholder="****" value={password} onChange={e => setpassword( e.target.value)} required/>
+        </InputGroup>
     </Flex>
     <Button
                 borderRadius={0}

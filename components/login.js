@@ -49,8 +49,10 @@ export default function Login() {
     {/* <img src='/login_img/bac.jpg'/> */}
     <div className={styles.form_div}>
     {signup ? (<Signup/>):(<>
-      <h3>Login</h3>
-    <form onSubmit={handleSubmit}>
+      {/* <h2 className={styles.login}>Login</h2> */}
+    <img className = {styles.fb_image} src="myimage.png" alt="fb_image"></img>
+    <h1 className={styles.welcome}>WELCOME</h1>
+    <form className = {styles.form} onSubmit={handleSubmit}>
       <Flex flexDirection={'column'}>
       <label >Email</label>
       <InputGroup border='1px' borderRadius={'8px'} >
