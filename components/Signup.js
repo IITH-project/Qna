@@ -4,7 +4,7 @@ import { Box, Button, Flex, FormControl, Input, InputGroup, InputLeftElement } f
 import {EmailIcon,LockIcon} from '@chakra-ui/icons'
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
-import { AiFillApple } from 'react-icons/ai';
+import { AiFillApple } from 'react-icons/Ai';
 import axios from 'axios';
 import Router from 'next/router';
 import { useToast } from '@chakra-ui/react'

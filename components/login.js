@@ -4,7 +4,7 @@ import { Box, Button, Flex, FormControl, Input, InputGroup, InputLeftElement } f
 import {EmailIcon,LockIcon} from '@chakra-ui/icons'
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
-import { AiFillApple } from 'react-icons/ai';
+import { AiFillApple } from 'react-icons/Ai';
 import axios from 'axios';
 import Router from 'next/router';
 import { useToast } from '@chakra-ui/react'
@@ -49,12 +49,10 @@ export default function Login() {
     {/* <img src='/login_img/bac.jpg'/> */}
     <div className={styles.form_div}>
     {signup ? (<Signup/>):(<>
-      {/* <h2 className={styles.login}>Login</h2> */}
-    <img className = {styles.fb_image} src="myimage.png" alt="fb_image"></img>
-    <h1 className={styles.welcome}>WELCOME</h1>
-    <form className = {styles.form} onSubmit={handleSubmit}>
+      <h3>Login</h3>
+    <form onSubmit={handleSubmit}>
       <Flex flexDirection={'column'}>
-      <label className={styles.name}>User ID</label>
+      <label >Email</label>
       <InputGroup border='1px' borderRadius={'8px'} >
           <InputLeftElement
             pointerEvents="none"
@@ -64,7 +62,7 @@ export default function Login() {
         </InputGroup>
     </Flex>
       <Flex flexDirection={'column'}>
-      <label className={styles.name}>Password</label>
+      <label >Password</label>
       <InputGroup border='1px' borderRadius={'8px'} >
       <InputLeftElement
             pointerEvents="none"
