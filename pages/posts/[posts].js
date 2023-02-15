@@ -36,7 +36,7 @@ export default function Posts({ data }) {
         </h2>
         <AccordionButton position={"relative"} paddingLeft="0px">
           <AccordionIcon />
-          <FaComment />
+          Comments
          </AccordionButton>
         <AccordionPanel pb={4} paddingLeft="41px">
           <Comments id={data.id}/>
@@ -45,12 +45,17 @@ export default function Posts({ data }) {
     </Accordion>
         )
       })}
-
+      <div>
+          {richtext && <Box width={'60%'}><RichText id="suraj"/></Box>}
+          <Box width={'81%'} m='auto'>
+          <Button onClick={()=>setrichtext(!richtext)}>Post Your Answer</Button>
+          </Box>
+          </div>
       </div>
       <div className={styles.right_bar_post}>rightSidebar</div>
     </div>
-    {richtext && <Box width={'60%'}><RichText/></Box>}
-    <Button onClick={()=>setrichtext(!richtext)}>Post Your Answer</Button>
+    
+    
       
     </>
   );

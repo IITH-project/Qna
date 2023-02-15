@@ -15,7 +15,8 @@ class App extends React.Component {
   }
 
   handleSubmit(event) {
-    alert("Text was submitted: " + this.state.content);
+    alert("Text was submitted: "+"id is"+this.props.id+" " + this.state.content);
+    this.setState({content:''})
     event.preventDefault();
   }
 
