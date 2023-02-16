@@ -1,5 +1,6 @@
 import React from "react";
 import { Editor } from "@tinymce/tinymce-react";
+import axios  from "axios";
 
 class App extends React.Component {
   constructor(props) {
@@ -14,10 +15,14 @@ class App extends React.Component {
     this.setState({content});
   }
 
-  handleSubmit(event) {
-    alert("Text was submitted: "+"id is"+this.props.id+" " + this.state.content);
-    this.setState({content:''})
+  handleSubmit=async (event)=> {
     event.preventDefault();
+    const {data}=await axios.post('/api/createanswer',{
+      id:this.props.id,
+      post:this.state.content
+    })
+    this.props.setData([...this.props.Alldata,data[0]])
+    this.state.content=""
   }
 
   render() {

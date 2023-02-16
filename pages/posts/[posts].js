@@ -14,11 +14,14 @@ import { FaComment } from "react-icons/fa";
 import axios from "axios";
 import Comments from "@/components/Comments";
 import RichText from '@/components/RichText'
+import { useRouter } from "next/router";
 
 
 
-export default function Posts({ data }) {
+export default function Posts({ data1 }) {
   const [richtext, setrichtext] = useState(false)
+  const [data, setdata] = useState(data1)
+  const router=useRouter()
   return (
     <>
     <div className={styles.postMain}>
@@ -45,27 +48,21 @@ export default function Posts({ data }) {
     </Accordion>
         )
       })}
-      <div>
-          {richtext && <Box width={'60%'}><RichText id="suraj"/></Box>}
-          <Box width={'81%'} m='auto'>
-          <Button onClick={()=>setrichtext(!richtext)}>Post Your Answer</Button>
-          </Box>
-          </div>
+
       </div>
       <div className={styles.right_bar_post}>rightSidebar</div>
     </div>
-    
-    
+    {richtext && <Box width={'60%'}><RichText id={router.query.posts} Alldata={data} setData={setdata} /></Box>}
+    <Button onClick={()=>setrichtext(!richtext)}>Post Your Answer</Button>
       
     </>
   );
 }
-
 export async function getServerSideProps(context) {
   console.log(context.query.posts);
   let { data } = await axios.get(
     `http://127.0.0.1:3000/api/post?search=${context.query.posts}`
   );
 
-  return { props: { data } };
+  return { props: { data1:data } };
 }
