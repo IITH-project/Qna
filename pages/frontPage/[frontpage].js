@@ -87,7 +87,6 @@ export default function Home({ data }) {
           </Box>
         </Box>
       </m.main>
-
     </>
   )
 }

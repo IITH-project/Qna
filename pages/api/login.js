@@ -16,6 +16,7 @@ const handler= async (req,res)=>{
             if(results.rows.length==1){
                 let token= jwt.sign(email,process.env.SECRET_KEY)
                 setCookie('auth-token', token, { req, res });
+                console.log(getCookie('auth-token',{req,res}))
                 res.status(200).send(results.rows)
             }
             else{

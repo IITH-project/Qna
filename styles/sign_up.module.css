@@ -1,0 +1,17 @@
+/* .signup_image{
+  size: 10vh;
+} */
+.label{
+    padding-top: 100px;
+     font-size: xx-large;
+     font-weight: bold;
+     font-family: tarjan;
+  }
+  .form{
+      display: flex;
+      margin-top: 30px;
+     padding-top: 30px;
+     height:30vh;
+     flex-direction: column;
+     justify-content: space-between;
+   }
