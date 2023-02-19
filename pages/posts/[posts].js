@@ -11,6 +11,7 @@ import {
   Input,
 } from "@chakra-ui/react";
 import styles from "@/styles/Home.module.css";
+import styles1 from '@/styles/posts.module.css';
 import { FaComment } from "react-icons/fa";
 import axios from "axios";
 import Comments from "@/components/Comments";
@@ -38,15 +39,15 @@ export default function Posts({ data1 }) {
       <AccordionItem marginBottom={'4rem'}>
         <h2>
           <Box as="span" flex="1" textAlign="left">
-            <Heading size={'lg'}>{data.title && data.title }</Heading>
-            <Box fontSize={'1.3em'} color={'black'} className={styles.para}  dangerouslySetInnerHTML={{ __html: data.body}}/>
+            <Heading size={'lg'}>{data.title ? data.title:"No title" }</Heading>
+            <Box  fontSize={'1.3em'} color={'black'} className={styles.para}  dangerouslySetInnerHTML={{ __html: data.body}}/>
           </Box>
         </h2>
         <AccordionButton  paddingLeft="0px">
           <AccordionIcon />
           Comments
          </AccordionButton>
-        <AccordionPanel pb={4} paddingLeft="41px">
+        <AccordionPanel className={styles.comment} pb={4} paddingLeft="41px">
           <Comments id={data.id}/>
         </AccordionPanel>
       </AccordionItem>

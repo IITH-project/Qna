@@ -132,9 +132,27 @@ border-radius: 0px;
 
 .para{
   /* border: 2px solid rgb(235, 12, 239); */
+  color: azure;
+  margin-left: 0.5vw;
+  border: 6px double rgb(21, 187, 159);
+  padding: 1rem;
+  background-color: rgb(225, 252, 249);
+}
+
+.comment{
+  border: 2px solid rgb(48, 201, 211);
+  /* color: rgb(0, 0, 0); */
+  background-color: #e8faf6;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 4vw;
+  /* align-items: center; */
+}
+.comment button{
+  background-color: #16a98c;
   color: black;
-  font-size: 1.1rem;
-  margin-left: 0.5vw;}
+}
 
 .innerbox_odd{
   border: 2px solid rgb(6, 227, 76);

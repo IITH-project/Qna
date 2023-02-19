@@ -60,7 +60,7 @@ const Home = (props) => {
           className={styles['i-m-a-g-e55162']}
         />
         <span className={styles['text08']}>
-          <span>We Are Here To Help You</span>
+        We Are Here To Help You
         </span>
         <span className={styles['text10']}>
           <span>
@@ -79,12 +79,13 @@ const Home = (props) => {
         <span className={styles['text12']}>
           <span>QnA</span>
         </span>
-        <img
+        {/* <img
           src="/img/Rectangle 6.png"
           alt="Rectangle61672"
           className={styles['rectangle6']}
-        />
+        /> */}
         <span className={styles['text14']}>
+          {/* <button href='/frontPage/1' type="button">Try Now</button> */}
           <Link href='/frontPage/1'>Try Now</Link>
         </span>
       </div>
