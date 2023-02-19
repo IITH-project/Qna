@@ -9,7 +9,12 @@ function sleep(ms) {
 
 export default async function handler(req, res) {
   // console.log(req.body.queryData)
-    let a = (req.body.queryData).split('&')
+  let page=1
+  if(req.body.queryData.p){
+    page=req.body.queryData.p
+  }
+    let a = (req.body.queryData.frontpage).split('&')
+    // let a=['code-smell']
     // console.table(a)
     let b = []
     for(let i = 0 ; i < a.length ;i++){
@@ -43,7 +48,7 @@ export default async function handler(req, res) {
       }
     })
     // await pool
-    await sleep(10)
+    await sleep(20)
     for(let i = 0 ; i < b.length ; i++){
       pool.query("insert into public.mytable values ("+b[i]+")",(error, results) => {
         if (error) {
@@ -51,9 +56,16 @@ export default async function handler(req, res) {
         }
       })
     }
-    await sleep(10);
-    let finquery = "select id,body from posts where id in (select * from public.mytable) LIMIT 5"
-    pool.query(finquery,(error, results) => {
+    await sleep(20);
+    var finquery
+    if(req.body.queryData.sortby==='time'){
+     finquery = `select id,title,body,score,view_count,answer_count from posts where id in (select * from public.mytable)   order by creation_date desc LIMIT 10 offset $1`
+    }
+    else{
+      finquery=`select id,title,body,score,view_count,answer_count from posts where id in (select * from public.mytable)   order by score desc LIMIT 10 offset $1`
+    }
+
+    pool.query(finquery,[10*(page-1)],(error, results) => {
       if (error) {
         throw error
       }

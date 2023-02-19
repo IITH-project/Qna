@@ -10,8 +10,21 @@ import { Search2Icon } from '@chakra-ui/icons'
 import axios from 'axios'
 import SearchModal from '@/components/SearchModal'
 import { motion as m } from "framer-motion"
+import { Router, useRouter } from 'next/router'
+import { Select } from '@chakra-ui/react'
 
 export default function Home({ data }) {
+  const router =useRouter()
+  const [sort, setsort] = useState("upvotes")
+  // console.log(sort)
+  // console.log(data)
+  const handleSort=()=>{
+    console.log(sort)
+    router.push({
+      pathname: `/frontPage/${router.query.frontpage}`,
+      query: { sortby: sort },
+    })
+  }
   return (
     <>
       <Head>
@@ -21,10 +34,15 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <m.main className={styles.mainPage} initial={{ y: 90 }} animate={{ y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }}>
-
+      
         <Box display={'flex'} mt='3em' h={'85%'} position={'relative'} top='70px' justifyContent={'space-between'} >
           <div classname={styles.leftbox}>
             <Box width={'13rem'} mr={'2em'}>
+            <Select  value={sort} onChange={e=>setsort(e.target.value)} placeholder='select sort'>
+            <option value='time'>time</option>
+            <option value='upvotes'>upvotes</option>
+          </Select>
+          <button onClick={handleSort}>Sort</button>
               <nav className={styles.nav}>
                 <ul>
                   <li><a href="#">Home</a></li>
@@ -53,13 +71,13 @@ export default function Home({ data }) {
             {data?.length > 0 ? data.map((data, index) => {
               return (index % 2 == 0 ? (<div className={styles.innerbox_even} key={index}>
                 <div className={styles.inner1}>
-                  <div className={styles.innner}>20 Votes</div>
-                  <div className={styles.innner}> 4 Answers</div>
-                  <div className={styles.innner}>342 Views</div>
+                  <div className={styles.innner}>{data.score && data.score} Score</div>
+                  <div className={styles.innner}> {data.answer_count && data.answer_count} Answers</div>
+                  <div className={styles.innner}>{data.view_count && data.view_count} Views</div>
                 </div>
                 <div className={styles.inner2}>
                   <div className={styles.innner2}>
-                    <Link href={`/posts/${data.id}`} className={styles.title} >{data.title ? data.title : <div>No title 😂 </div>}</Link>
+                    <Link href={`/posts/${data.id}`} className={styles.title} >{data.title ? data.title : <div>No title  </div>}</Link>
                     <div className={styles.para} dangerouslySetInnerHTML={{ __html: data.body.substring(0, 300) }} />
                   </div>
                   <div className={styles.post_date}>
@@ -75,7 +93,7 @@ export default function Home({ data }) {
 
                 <div className={styles.inner2}>
                   <div className={styles.innner2}>
-                    <Link href={`/posts/${data.id}`} className={styles.title} >{data.title ? data.title : <div>No title 😂 </div>}</Link>
+                    <Link href={`/posts/${data.id}`} className={styles.title} >{data.title ? data.title : <div>No title </div>}</Link>
                     <div className={styles.para} dangerouslySetInnerHTML={{ __html: data.body.substring(0, 300) }} />
                   </div>
                   <div className={styles.post_date}>
@@ -99,7 +117,7 @@ export async function getServerSideProps(context) {
 
   if (containsOnlyNumbers(context.query.frontpage) == false) {
     var { data } = await axios.post(`http://127.0.0.1:3000/api/searchbytags`, {
-      queryData: context.query.frontpage
+      queryData: context.query
     })
   }
 

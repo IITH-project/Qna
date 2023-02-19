@@ -8,25 +8,30 @@ import {
   Box,
   Heading,
   Button,
+  Input,
 } from "@chakra-ui/react";
 import styles from "@/styles/Home.module.css";
 import { FaComment } from "react-icons/fa";
 import axios from "axios";
 import Comments from "@/components/Comments";
-import RichText from '@/components/RichText'
 import { useRouter } from "next/router";
-
+import dynamic from 'next/dynamic';
+const Editor =dynamic(()=>import('@/components/RichtextEdit'),{
+  ssr:false
+})
 
 
 export default function Posts({ data1 }) {
   const [richtext, setrichtext] = useState(false)
-  const [data, setdata] = useState(data1)
+  const [data2, setdata] = useState(data1)
+  // const [body, setbody] = useState()
   const router=useRouter()
+
   return (
     <>
     <div className={styles.postMain}>
       <div className={styles.first_div_post}>
-      {data.map((data)=>{
+      {data2.map((data)=>{
         return (
           
       <Accordion allowToggle  width={'90%'} margin={'auto'}>
@@ -37,7 +42,7 @@ export default function Posts({ data1 }) {
             <Box fontSize={'1.3em'} color={'black'} className={styles.para}  dangerouslySetInnerHTML={{ __html: data.body}}/>
           </Box>
         </h2>
-        <AccordionButton position={"relative"} paddingLeft="0px">
+        <AccordionButton  paddingLeft="0px">
           <AccordionIcon />
           Comments
          </AccordionButton>
@@ -49,11 +54,14 @@ export default function Posts({ data1 }) {
         )
       })}
 
+      
+        {richtext && <Box width={'75%' } m='auto'  borderBottom={'2px solid #d6c5c5'} boxSizing='border-box' padding={'10px'}><Editor id={router.query.posts} Alldata={data1} setData={setdata}/></Box>}
+    <Button onClick={()=>setrichtext(!richtext)} display='block' m={'auto'} mb='2rem'>Post Your Answer</Button>
       </div>
       <div className={styles.right_bar_post}>rightSidebar</div>
     </div>
-    {richtext && <Box width={'60%'}><RichText id={router.query.posts} Alldata={data} setData={setdata} /></Box>}
-    <Button onClick={()=>setrichtext(!richtext)}>Post Your Answer</Button>
+    {/* {richtext && <Box width={'60%'}><RichText id={router.query.posts} Alldata={data} setData={setdata} /></Box>} */}
+    
       
     </>
   );

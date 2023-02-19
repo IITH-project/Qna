@@ -4,8 +4,8 @@ import pool  from "../../db"
 export default async function handler(req, res) {
     let a = req.query.search
     console.log("in api "+a)
-    let query = `select * from posts where id in (select accepted_answer_id from posts where id = $1) union select * from posts where parent_id = $2`
-    pool.query(query,[a,a], (error, results) => {
+    let query = `select * from posts where parent_id = $1 order by creation_date`
+    pool.query(query,[a], (error, results) => {
       if (error) {
         throw error
       }

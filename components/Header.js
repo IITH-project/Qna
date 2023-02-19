@@ -59,12 +59,12 @@ export default function Header() {
     deleteCookie('auth-token')
     localStorage.removeItem('userData')
     setsession(false)
-
+    Router.push('/')
   }
   
   return (
     <>
-      <Box  px={5} position='sticky' top={'0'} h={'12vh'}>
+      <Box  px={5} backgroundColor='snow' position='sticky' top={'0'} h={'12vh'}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
         <div className='logo'> QnA </div>
         <SearchModal/>
@@ -97,6 +97,7 @@ export default function Header() {
                     </Center>
                     <br />
                     <MenuDivider />
+                    <Button mx={'1.3em'} onClick={()=>Router.push('/profile')}>Profile</Button>
                     <Button onClick={handleLogin}>Logout</Button>
                   </MenuList>
                 </Menu>):(<Button bgGradient="linear(to-r, teal.400, teal.600)" onClick={()=>{Router.push('/login')}}>Login</Button>)
