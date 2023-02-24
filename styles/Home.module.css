@@ -9,15 +9,27 @@
 .main_div{
 width: 100vw;
 height: 100vh;
-background-color: #2eb096;
+/* background-color: #fafafa; */
 /* background: #051511; */
+background-image: url("/background_2.jpg");
+background-size: 100% 100%;
+/* background : width 100% ; */
+background-attachment: fixed;
 border-radius: 0px;
   z-index: -1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+.fb_image{
+  /* size : 200 px ; */
+  height : 200px ;
+  margin-bottom : 35px ;
+}
+.label_welcome{
+  font-family: tarjan;
+  font-size: 30px;
+}
 .form_div{
   border: 1px solid black;
   width: 567px;
@@ -27,7 +39,10 @@ border-radius: 0px;
   justify-content: center;
   flex-direction: column;
 }
-
+.text_label{
+  font-size: 20px;
+  font-family: tarjan;
+}
 .inline{
   display: inherit;
 }
@@ -266,6 +281,7 @@ box-shadow: 5px 7px 10px rgba(0,0,0,0.7);
 
 
 .signup{
+  font-size: large ;
   text-decoration: underline;
 }
 

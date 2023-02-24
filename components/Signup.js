@@ -4,7 +4,7 @@ import { Box, Button, Flex, FormControl, Input, InputGroup, InputLeftElement } f
 import {EmailIcon,LockIcon} from '@chakra-ui/icons'
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
-import { AiFillApple } from 'react-icons/Ai';
+// import { AiFillApple } from 'react-icons/Ai';
 import axios from 'axios';
 import Router from 'next/router';
 import { useToast } from '@chakra-ui/react'
@@ -47,33 +47,26 @@ export default function Signup() {
 
   return (
     <>
-    {/* <img className = {styles.signup_image} src="signup.webp" alt="fb_image"></img> */}
+    <img className = {styles.signup_image} src="signup.webp" alt="fb_image"></img>
     <h3 className={styles.label}>Signup</h3>
     <form className = {styles.form}onSubmit={handleSubmit}>
       <Flex height={'18vh'} flexDirection={'column'} justifyContent={'space-between'}>
-      <label >Email</label>
+      <label className={styles.text_label}>User id :</label>
       <InputGroup border='1px' borderRadius={'8px'} >
       <InputLeftElement
             pointerEvents="none"
           ><EmailIcon color="gray.300" /></InputLeftElement>
-          <Input type="text" placeholder="example@gmail.com" value={email} onChange={e => setemail( e.target.value)} required/>
+          <Input type="text" placeholder="user_id" backgroundColor={'#ffffff'} value={email} onChange={e => setemail( e.target.value)} required/>
         </InputGroup>
-        <label >password</label>
+        <label className={styles.text_label}>Password :</label>
       <InputGroup border='1px' borderRadius={'8px'} >
           <InputLeftElement
             pointerEvents="none"
             children={<EmailIcon color="gray.300" />}
           />
-          <Input type="text" placeholder="****" value={password} onChange={e => setpassword( e.target.value)} required/>
+          <Input type="text" placeholder="*******" backgroundColor={'#ffffff'} value={password} onChange={e => setpassword( e.target.value)} required/>
         </InputGroup>
-        <label >password</label>
-      <InputGroup border='1px' borderRadius={'8px'} >
-          <InputLeftElement
-            pointerEvents="none"
-            children={<EmailIcon color="gray.300" />}
-          />
-          <Input type="text" placeholder="****" value={password} onChange={e => setpassword( e.target.value)} required/>
-        </InputGroup>
+
     </Flex>
     <Button
                 borderRadius={0}
