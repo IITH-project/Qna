@@ -86,9 +86,9 @@ export default function Home({ data }) {
                 </div>
               </div>) : (<div className={styles.innerbox_odd} key={index}>
                 <div className={styles.inner1}>
-                  <div className={styles.innner}>20 Votes</div>
-                  <div className={styles.innner}> 4 Answers</div>
-                  <div className={styles.innner}>342 Views</div>
+                <div className={styles.innner}>{data.score && data.score} Score</div>
+                  <div className={styles.innner}> {data.answer_count && data.answer_count} Answers</div>
+                  <div className={styles.innner}>{data.view_count && data.view_count} Views</div>
                 </div>
 
                 <div className={styles.inner2}>
