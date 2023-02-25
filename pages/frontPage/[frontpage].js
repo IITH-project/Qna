@@ -37,8 +37,8 @@ export default function Home({ data }) {
       
         <Box display={'flex'} mt='3em' h={'85%'} position={'relative'} top='70px' justifyContent={'space-between'} >
           <div classname={styles.leftbox}>
-            <Box width={'13rem'} mr={'2em'}>
-            <Select  value={sort} onChange={e=>setsort(e.target.value)} placeholder='select sort'>
+            <Box  mr={'2em'}>
+            <Select  value={sort} border={'2px solid green'} margin-left={'5vw'} onChange={e=>setsort(e.target.value)} placeholder='select sort'>
             <option value='time'>time</option>
             <option value='upvotes'>upvotes</option>
           </Select>

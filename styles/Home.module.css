@@ -68,6 +68,8 @@ border-radius: 0px;
 
 .fontPageColor{
   color:  white;
+  /* background-color: #84cdbf; */
+
 }
 
 .searcHere{
@@ -96,6 +98,9 @@ border-radius: 0px;
 .leftbox{
   display: flex;
   flex-direction: column;
+  width: 15%;
+  margin-left: 3vw;
+  /* border: 2px solid green; */
 }
 
 .student{
@@ -131,6 +136,13 @@ border-radius: 0px;
 } */
 
 .para{
+  /* border: 2px solid rgb(235, 12, 239); */
+  padding: 0.5rem;
+
+}
+
+
+.para_posts{
   /* border: 2px solid rgb(235, 12, 239); */
   color: azure;
   margin-left: 0.5vw;
