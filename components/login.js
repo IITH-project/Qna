@@ -50,8 +50,8 @@ export default function Login() {
     <div className={styles.form_div}>
     {signup ? (<Signup/>):(<>
       {/* <h2 className={styles.login}>Login</h2> */}
-    <img className = {styles.fb_image} src="fb_image.jpg" alt="fb_image"></img>
-    <h1 className={styles.label_welcome}>WELCOME</h1>
+    <img className = {styles.fb_image} src="myimage.png" alt="fb_image"></img>
+    <h1 className={styles.welcome}>WELCOME</h1>
     <form className = {styles.form} onSubmit={handleSubmit}>
       <Flex flexDirection={'column'}>
       <label className={styles.text_label}>User id :</label>

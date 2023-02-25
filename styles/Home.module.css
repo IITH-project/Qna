@@ -9,7 +9,9 @@
 .main_div{
 width: 100vw;
 height: 100vh;
-/* background-color: #fafafa; */
+background-image: url("../public/loginbackground.png");
+background-size: cover;
+/* background-color: #cafafe; */
 /* background: #051511; */
 background-image: url("/background_2.jpg");
 background-size: 100% 100%;
@@ -31,6 +33,7 @@ border-radius: 0px;
   font-size: 30px;
 }
 .form_div{
+  background-color: #ddf4ff;
   border: 1px solid black;
   width: 567px;
   height: 621px;
@@ -39,10 +42,46 @@ border-radius: 0px;
   justify-content: center;
   flex-direction: column;
 }
-.text_label{
-  font-size: 20px;
-  font-family: tarjan;
+ .form{
+    display: flex;
+   padding-bottom: 0px;
+   height:35vh;
+   flex-direction: column;
+   justify-content: space-between;
+ }
+.login{
+  padding-left: 25px;
+  padding-bottom: 30px;
+  font-weight: bold;
+  font-size: 30px;
+  display: block;
+  width: 150px;
+  float: left;
 }
+.name {
+  /* color: #bb957b; */
+  /* padding-bottom: 20px; */
+  font-weight: bold;
+  display: block;
+  width: 150px;
+  float: left;
+  }
+  .welcome{
+    padding-bottom: 20px;
+    font-weight: normal;
+    display: block;
+    font-size: 40px;
+    font-family: Trajan;
+    /* width: 300px; */
+  }
+.fb_image{
+  /* padding-top: 30px; */
+  height: 35vh;
+  width: auto;
+}
+/* .credentials{
+  padding-bottom: 50px;
+} */
 .inline{
   display: inherit;
 }
@@ -70,7 +109,8 @@ border-radius: 0px;
 
 
 .mainPage{
-  background-image: url('/img_2/bac_wall.jpg');
+  /* background-image: url("../public/loginbackground.png"); */
+  background-size: cover;
   position: absolute;
   /* color: antiquewhite; */
   top: 0;
