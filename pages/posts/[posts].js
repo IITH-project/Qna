@@ -40,6 +40,7 @@ export default function Posts({ data1 }) {
         <h2>
           <Box as="span" flex="1" textAlign="left">
             <Heading size={'lg'}>{data.title ? data.title:"No title" }</Heading>
+           { data.tags ? <h3>{data.tags}</h3>:""}
             <Box  fontSize={'1.3em'} color={'black'} className={styles.para}  dangerouslySetInnerHTML={{ __html: data.body}}/>
           </Box>
         </h2>

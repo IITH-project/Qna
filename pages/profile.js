@@ -18,7 +18,7 @@ export default function profile() {
     const [userdata, setuserdata] = useState()
     const usepost=async()=>{
       const {data}=await axios.get('/api/userpost')
-      // console.log(data)
+      console.log(data)
       setuserPost(data)
 
     }
@@ -65,6 +65,7 @@ export default function profile() {
           return (
             <div className={styles.profileDiv}>
               <h2 className={styles.profile_title}>{post.title?post.title:"No title" } </h2>
+              {/* <h3>{post.tags && post.tags}</h3> */}
               <ProfileEdit post={post} setuserPost={setuserPost} userPost={userPost} />
               <div  dangerouslySetInnerHTML={{ __html: post.body }} />
               
