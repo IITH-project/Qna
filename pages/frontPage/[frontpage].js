@@ -78,10 +78,10 @@ export default function Home({ data }) {
                 <div className={styles.inner2}>
                   <div className={styles.innner2}>
                     <Link href={`/posts/${data.id}`} className={styles.title} >{data.title ? data.title : <div>No title  </div>}</Link>
-                    <div className={styles.para} dangerouslySetInnerHTML={{ __html: data.body.substring(0, 300) }} />
-                  </div>
                   <div className={styles.post_date}>
                     posted on :
+                  </div>
+                    <div className={styles.para} dangerouslySetInnerHTML={{ __html: data.body.substring(0, 300) }} />
                   </div>
                 </div>
               </div>) : (<div className={styles.innerbox_odd} key={index}>
@@ -94,10 +94,10 @@ export default function Home({ data }) {
                 <div className={styles.inner2}>
                   <div className={styles.innner2}>
                     <Link href={`/posts/${data.id}`} className={styles.title} >{data.title ? data.title : <div>No title </div>}</Link>
-                    <div className={styles.para} dangerouslySetInnerHTML={{ __html: data.body.substring(0, 300) }} />
-                  </div>
                   <div className={styles.post_date}>
                     posted on:
+                  </div>
+                    <div className={styles.para} dangerouslySetInnerHTML={{ __html: data.body.substring(0, 300) }} />
                   </div>
                 </div>
               </div>))
