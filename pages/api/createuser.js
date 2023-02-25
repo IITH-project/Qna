@@ -1,7 +1,13 @@
 import pool  from "../../db"
 
+export const config = {
+  api: {
+    externalResolver: true,
+  },
+}
 
 export default async function handler(req, res) {
+  if(req.method=='POST'){
     const d = new Date('2022-02-6 17:00:00') ;
 
     let a = [8,0,0,0,0,'strange','Palm Bay,FL','','','i love doctor strange',d,d]
@@ -15,3 +21,7 @@ export default async function handler(req, res) {
       res.status(200).send("inserted succesfully")
     })
   }
+  else{
+    res.send({error:true,message:"this method is not allow"})
+  }
+}

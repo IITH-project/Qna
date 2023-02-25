@@ -7,7 +7,14 @@ function sleep(ms) {
   });
 }
 
+export const config = {
+  api: {
+    externalResolver: true,
+  },
+}
+
 export default async function handler(req, res) {
+  if(req.method=='GET'){
   // console.log(req.body.queryData)
     let a = (req.body.queryData).split('&')
     // console.table(a)
@@ -67,3 +74,7 @@ export default async function handler(req, res) {
     })
     
   }
+  else{
+    res.send({error:true,message:"this method is not allow"})
+  }
+}

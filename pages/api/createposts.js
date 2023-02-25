@@ -1,7 +1,13 @@
 import pool  from "../../db"
 
+export const config = {
+  api: {
+    externalResolver: true,
+  },
+}
 
 export default async function handler(req, res) {
+  if(req.method=='POST'){
     let tags = ['comments','android']
     let string = '' 
     for(var i = 0 ; i < tags.length ;i++){
@@ -22,3 +28,7 @@ export default async function handler(req, res) {
       res.status(200).send("inserted succesfully")
     })
   }
+  else{
+    res.send({error:true,message:"this method is not allow"})
+  }
+}

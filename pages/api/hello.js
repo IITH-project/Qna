@@ -9,6 +9,7 @@ export const config = {
 }
 
 export default async function handler(req, res) {
+  if(req.method=='GET'){
   try {
     let a=req.query.search
   let queryPost
@@ -32,4 +33,8 @@ export default async function handler(req, res) {
   } catch (error) {
     res.status(400).send("internal server error")
   }
+}
+else{
+  res.send({error:true,message:"this method is not allow"})
+}
 }

@@ -1,7 +1,13 @@
 import pool  from "../../db"
 
+export const config = {
+  api: {
+    externalResolver: true,
+  },
+}
 
 export default async function handler(req, res) {
+  if(req.method=='POST'){
     const d = new Date('2022-02-6 17:00:00') ;
     let a = [0,1,,1,,0,,0,0,0,'','','new post','<comment>','CC BY-SA 2.5','do you like comics?',0,d,,,,d]
 
@@ -15,3 +21,7 @@ export default async function handler(req, res) {
       res.status(200).send("yo")
     })
   }
+  else{
+    res.send({error:true,message:"this method is not allow"})
+  }
+}

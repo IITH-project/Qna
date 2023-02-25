@@ -1,7 +1,13 @@
 import pool  from "../../db"
 
+export const config = {
+  api: {
+    externalResolver: true,
+  },
+}
 
 export default async function handler(req, res) {
+  if(req.method=='GET'){
     let a = req.query.search
     console.log("in api "+a)
     let query = `select * from posts where id in (select accepted_answer_id from posts where id = $1) union select * from posts where parent_id = $2`
@@ -14,3 +20,7 @@ export default async function handler(req, res) {
       res.status(200).send(results.rows)
     })
   }
+  else{
+    res.send({error:true,message:"this method is not allow"})
+  }
+}
