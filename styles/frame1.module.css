@@ -235,7 +235,7 @@
     text-decoration: none;
     background-color: rgb(51, 98, 209);
     border-radius: 32px;
-    box-shadow: 4px 4px 8px blanchedalmond;
+    
   }
 
   .text14:hover{
@@ -244,6 +244,7 @@
     left: 651px;
     width: 260;
     font-size: 56px;
+    box-shadow: 4px 4px 8px blanchedalmond;
   
   }
 

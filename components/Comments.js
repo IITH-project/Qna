@@ -42,7 +42,7 @@ export default function Comments({id}) {
     <div>
       {Comments.map((data,index)=>{
         return (
-            <Box borderBottom={'0.5px'} borderColor='whiteAlpha.100' key={index} fontSize={'1.2em'}><Avatar size={'sm'} name={data.user_display_name?data.user_display_name:(data.text) }/> {data.text}</Box>
+            <Box borderBottom={'0.5px'} borderColor='whiteAlpha.100' key={index} fontSize={'1.2em'}><Avatar size={'sm'} position='unset' name={data.user_display_name?data.user_display_name:(data.text) }/> {data.text}</Box>
         )
       })}
     </div>

@@ -3,6 +3,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { useRouter } from "next/router";
 import Header from '@/components/Header'
 import { motion } from 'framer-motion';
+import NextNProgress from 'nextjs-progressbar';
 
 
 export default function App({ Component, pageProps,router }) {
@@ -18,6 +19,7 @@ export default function App({ Component, pageProps,router }) {
     }}>
     <ChakraProvider>
     {router.pathname !== "/login" && router.pathname !== "/" && router.pathname!=='/404' && <Header />}
+    <NextNProgress color='#1d7e7a'/>
     <Component {...pageProps} />
     </ChakraProvider>
     </motion.div>
