@@ -89,7 +89,13 @@ One of our group with web background was interested in using **Chakra-UI** for t
 
 ## Contribution of each group member in the implementation :
 
-**Team members :** Suraj Kumar , Shivanshu ,Karthik from AI21 .
+**Team members :** 
+
+Suraj Kumar AI21BTECH11029, 
+
+Shivanshu AI21BTECH11027,
+
+Karthik AI21BTECH11024 .
 
 **Suraj Kumar :** 
 
