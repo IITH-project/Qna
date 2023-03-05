@@ -12,9 +12,9 @@ const checkUser= handler => async (req,res)=>{
 
 
     const token=getCookie('auth-token', { req, res });
-    console.log("from token"+token)
+    // console.log("from token"+token)
     if(!token){
-        res.send({error:true,message:'please authenticate first'})
+       return res.send({error:true,message:'please authenticate first'})
     }
 
     try {

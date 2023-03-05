@@ -5,19 +5,32 @@ import axios from 'axios';
 import { useRef } from 'react';
 import { useState } from 'react';
 import { Button, FormLabel, Input } from '@chakra-ui/react';
+import { useToast } from '@chakra-ui/react';
 
 export default function editor({id,Alldata,setData}) {
     const editor = useRef(null);
 	const [content, setContent] = useState();
 
+  const toast=useToast()
 const  handleSubmit=async (event)=> {
     event.preventDefault();
     const {data}=await axios.post('/api/createanswer',{
       id,
       post:content
     })
+    if(data.error){
+      toast({
+        title: "error",
+        description: `Please Autenticate First`,
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      })
+    }
+    else{
     setData([...Alldata,data[0]])
     setContent('')
+    }
   }
   return (
     <form onSubmit={handleSubmit}>

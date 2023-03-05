@@ -20,10 +20,10 @@ const Home = (props) => {
         <a href='http://localhost:3000/frontPage/1'>
           <span className={styles['text']}>Home</span>
         </a>
-        <a>
+        <a href='https://github.com/websiteSuraj/Qna#report'>
         <span className={styles['text02']}>Blog</span>
         </a>
-        <a>
+        <a href='https://github.com/websiteSuraj/Qna#contribution-of-each-group-member-in-the-implementation-'>
         <span className={styles['text04']}>About us</span>
         </a>
         <a>

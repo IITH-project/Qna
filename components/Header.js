@@ -66,7 +66,7 @@ export default function Header() {
     <>
       <Box  px={5} backgroundColor='#fefdfd' position='sticky' top={'0'} h={'12vh'}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-        <div className='logo'> QnA </div>
+        <div className='logo'> <a href="/">QnA</a> </div>
         <SearchModal/>
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>

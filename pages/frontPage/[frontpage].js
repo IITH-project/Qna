@@ -6,7 +6,7 @@ import {
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { motion as m } from "framer-motion";
+import { motion as m, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { Select } from "@chakra-ui/react";
 
@@ -81,7 +81,11 @@ export default function Home({ data }) {
           <div className={styles.student}>
             <img src="/img/student.png" alt="image"></img>
           </div>
-          <Box
+          <Box 
+          as={m.div}
+          initial={{opacity:0}}
+          animate={{opacity:1}}
+          transition={{delay:5, type: "spring", stiffness: 100}}
             maxHeight={"80vh"}
             overflow="auto"
             css={{
