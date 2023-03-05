@@ -54,7 +54,7 @@ One of our group members with web background was interested in using **Chakra-UI
 
 **login.js**: login of the user and set up the cookie.
 
-**search by tags**: gets all the posts with the given tags.
+**searchbytags.js**: gets all the posts with the given tags.
 
 **userpost.js** : gets all the posts for a given user_id(owner_user_id).
 
