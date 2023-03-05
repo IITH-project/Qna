@@ -114,10 +114,6 @@ export default function Posts({ data1 }) {
         <div className={styles1.ele}>Comments:  {question[0].comment_count ?question[0].comment_count: "0"}</div>
         <div className={styles1.ele}>Tags: {question[0].tags && (question[0].tags.replaceAll('<','  ')).replaceAll('>',' ,')}</div>
         </div>
-        {/* <div className={styles1.answered}>
-        <div>Answred By:</div>
-        <div>Answred On:</div>
-        </div> */}
         </div>
     </div>
     {/* {richtext && <Box width={'60%'}><RichText id={router.query.posts} Alldata={data} setData={setdata} /></Box>} */}
