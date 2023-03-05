@@ -13,10 +13,10 @@ export default async function handler(req, res) {
     let a=req.query.search
   let queryPost
   if(a==1){
-    queryPost=`select id,owner_display_name,title,body from posts limit 5`
+    queryPost=`select id,owner_display_name,title,body,score,view_count,answer_count from posts limit 5`
   }
   else{
-    queryPost=`select id,owner_display_name,title,body from
+    queryPost=`select id,owner_display_name,title,body,score,view_count,answer_count from
     posts where owner_user_id=${a} Limit 5`
   }
   pool.query(queryPost, (error, results) => {
@@ -34,6 +34,6 @@ export default async function handler(req, res) {
   }
 }
 else{
-  res.send({error:true,message:"this method is not allowed"})
+  res.send({error:true,message:"this method is not allow"})
 }
 }

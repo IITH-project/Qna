@@ -199,7 +199,10 @@ export default function SearchModal() {
                             <Box key={index}>
                               <Text pt="2" fontSize="sm">
                                 <Button onClick={check3}>
+                                <h3>id: {data.id}</h3>
+                                <Text mx={'1rem'}>
                                   {data.tag_name}
+                                  </Text>
                                 </Button>
                               </Text>
                             </Box>
@@ -216,10 +219,12 @@ export default function SearchModal() {
                           return (
                             <Box key={index}>
                               <Text pt="2" fontSize="sm">
+                                
                                 <Link
                                   onClick={onClose}
                                   href={`/frontPage/${data.id}`}
                                 >
+                                  <h3>id: {data.id}</h3>
                                   {data.display_name}
                                 </Link>
                               </Text>

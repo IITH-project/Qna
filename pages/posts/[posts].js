@@ -23,6 +23,7 @@ const Editor =dynamic(()=>import('@/components/RichtextEdit'),{
 
 
 export default function Posts({ data1 }) {
+  // console.log(data1)
   const [richtext, setrichtext] = useState(false)
   const [data2, setdata] = useState(data1)
   // const [body, setbody] = useState()
@@ -34,12 +35,16 @@ export default function Posts({ data1 }) {
       <div className={styles.first_div_post}>
       {data2.map((data)=>{
         return (
-          
       <Accordion allowToggle  width={'90%'} margin={'auto'}>
+        {(String(data.id) === router.query.posts) && <Box fontSize={'4xl'}>
+          <Heading size={'lg'}>{data.title ? data.title:"No title" }</Heading>
+          <Box >Tags: {data.tags && (data.tags.replaceAll('<','  ')).replaceAll('>',' ,')}</Box></Box>}
+        { (String(data.id) !== router.query.posts) &&
+        
       <AccordionItem marginBottom={'4rem'}>
         <h2>
           <Box as="span" flex="1" textAlign="left">
-            <Heading size={'lg'}>{data.title ? data.title:"No title" }</Heading>
+            
             <Box  fontSize={'1.3em'} color={'black'} className={styles.para_posts}  dangerouslySetInnerHTML={{ __html: data.body}}/>
           </Box>
         </h2>
@@ -51,6 +56,7 @@ export default function Posts({ data1 }) {
           <Comments id={data.id}/>
         </AccordionPanel>
       </AccordionItem>
+      }
     </Accordion>
         )
       })}
@@ -59,7 +65,21 @@ export default function Posts({ data1 }) {
         {richtext && <Box width={'75%' } m='auto'  borderBottom={'2px solid #d6c5c5'} boxSizing='border-box' padding={'10px'}><Editor id={router.query.posts} Alldata={data1} setData={setdata}/></Box>}
     <Button onClick={()=>setrichtext(!richtext)} display='block' m={'auto'} mb='2rem'>Post Your Answer</Button>
       </div>
-      <div className={styles.right_bar_post}>rightSidebar</div>
+      <div className={styles1.right_bar_post}>
+        <div className={styles1.posted}>
+        <div className={styles1.ele}>Posted By: </div>
+        <div className={styles1.ele}>Posted On: </div>
+        <div className={styles1.ele}>Score: </div>
+        <div className={styles1.ele}>Views: </div>
+        <div className={styles1.ele}>Answers: </div>
+        <div className={styles1.ele}>Comments: </div>
+        <div className={styles1.ele}>Tags: </div>
+        </div>
+        {/* <div className={styles1.answered}>
+        <div>Answred By:</div>
+        <div>Answred On:</div>
+        </div> */}
+        </div>
     </div>
     {/* {richtext && <Box width={'60%'}><RichText id={router.query.posts} Alldata={data} setData={setdata} /></Box>} */}
     

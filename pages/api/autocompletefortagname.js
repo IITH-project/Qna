@@ -7,13 +7,14 @@ export const config = {
 }
 
 export default async function handler(req, res) {
-  if(req.method=='POST'){
-    let a = req.body.post_id
-    let query = `select id,text from comments where post_id = $1 order by creation_date desc`
-    pool.query(query,[a], (error, results) => {
+  if(req.method=='GET'){
+    let a = req.body.name
+    let query = `select tag_name from tags where tag_name ~* '${a}'`
+    pool.query(query, (error, results) => {
       if (error) {
         throw error
       }
+      // console.log(results.rows)
       res.status(200).send(results.rows)
     })
   }

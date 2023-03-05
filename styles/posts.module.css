@@ -1,0 +1,15 @@
+.right_bar_post{
+    width: 20%;
+    height: 32vh;
+    background-color: aliceblue;
+    /* border: 2px solid rgb(248, 126, 126); */
+}
+.posted{
+    display: flex;
+    flex-direction: column;
+}
+.ele{
+    margin-top: 1vh;
+    margin-left: 1vh;
+    font-weight: 500;
+}

@@ -15,66 +15,48 @@ export default function Signup() {
 
 
   const handleSubmit= async (e)=>{
+    e.preventDefault();
     const {data}=await axios.post('/api/createuser',{
-      email,
+      display_name:email,
       password
     })
     console.log(data);
-    if(data.error){
+    if(data[0].id !== null){
       toast({
-        title: data.message,
-        description: "We are unable to create your account please try again.",
-        status: 'error',
+        title: "successfull",
+        description: `you have successfully create with  id ${data[0].id} Please login....`,
+        status: 'success',
         duration: 3000,
         isClosable: true,
       })
+      setemail('')
+      setpassword('')
+      Router.push('/login')
     }
-    else{
-    localStorage.setItem("userData",JSON.stringify(data[0]))
-    setemail('')
-    setpassword('')
-    Router.back()
-    }
-    // console.log(data)
-    // if(data.error){
-    //   toast({
-    //     title: data.message,
-    //     description: "We've created your account for you.",
-    //     status: 'error',
-    //     duration: 3000,
-    //     isClosable: true,
-    //   })
-    // }
-    // else{
-    // localStorage.setItem("userData",JSON.stringify(data))
-    // setemail('')
-    // setpassword('')
-    // Router.push('/')
-    // }
   }
 
   return (
     <>
-    <img className = {styles.signup_image} src="signup.webp" alt="fb_image"></img>
+    {/* <img className = {styles.signup_image} src="signup.webp" alt="fb_image"></img> */}
     <h3 className={styles.label}>Signup</h3>
-    <form className = {styles.form}onSubmit={handleSubmit}>
+    <form className = {styles.form} onSubmit={handleSubmit}>
       <Flex height={'18vh'} flexDirection={'column'} justifyContent={'space-between'}>
-      <label className={styles.text_label}>User id :</label>
-      <InputGroup border='1px' borderRadius={'8px'} >
-      <InputLeftElement
-            pointerEvents="none"
-          ><EmailIcon color="gray.300" /></InputLeftElement>
-          <Input type="text" placeholder="user_id" backgroundColor={'#ffffff'} value={email} onChange={e => setemail( e.target.value)} required/>
-        </InputGroup>
-        <label className={styles.text_label}>Password :</label>
+      <label >Name</label>
       <InputGroup border='1px' borderRadius={'8px'} >
           <InputLeftElement
             pointerEvents="none"
             children={<EmailIcon color="gray.300" />}
           />
-          <Input type="text" placeholder="*******" backgroundColor={'#ffffff'} value={password} onChange={e => setpassword( e.target.value)} required/>
+          <Input type="text" backgroundColor={'#ffffff'} value={email} onChange={e => setemail( e.target.value)} required/>
         </InputGroup>
-
+        <label >password</label>
+      <InputGroup border='1px' borderRadius={'8px'} >
+          <InputLeftElement
+            pointerEvents="none"
+            children={<EmailIcon color="gray.300" />}
+          />
+          <Input type="text" placeholder="********" value={password} onChange={e => setpassword( e.target.value)} required/>
+        </InputGroup>
     </Flex>
     <Button
                 borderRadius={0}
