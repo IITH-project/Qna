@@ -13,12 +13,14 @@ import {
   Tag,
 } from "@chakra-ui/react";
 import Router from "next/router";
+import CreatePost from '@/components/createPost'
 
-export default function profile() {
+export default function Profile() {
   const [userPost, setuserPost] = useState();
   const [userdata, setuserdata] = useState();
   const [search, setsearch] = useState()
   const toast=useToast()
+  
   const usepost = async () => {
     const { data } = await axios.get("/api/userpost");
     // console.log(data);
@@ -29,6 +31,7 @@ export default function profile() {
     // console.log(data)
     setuserdata(data);
   };
+
   useEffect(() => {
     usepost();
     userData();
@@ -87,11 +90,12 @@ export default function profile() {
         </Center>
       </Container>
 
+            <CreatePost setuserPost={setuserPost} userPost={userPost}/>
       <Box width={"75%"} margin="3rem auto">
         {userPost &&
-          userPost.map((post) => {
+          userPost.map((post,index) => {
             return (
-              <div className={styles.profileDiv}>
+              <div key={index} className={styles.profileDiv}>
                 <h2 className={styles.profile_title}>
                   {post.title ? post.title : "No title"}{" "}
                 </h2>

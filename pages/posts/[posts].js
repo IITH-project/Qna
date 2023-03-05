@@ -38,7 +38,7 @@ export default function Posts({ data1 }) {
       <div className={styles.first_div_post}>
       {data2.map((data,index)=>{
         return (
-      <Accordion allowToggle  width={'90%'} margin={'auto'}>
+      <Accordion allowToggle key={index}  width={'90%'} margin={'auto'}>
         {(String(data.id) === router.query.posts) && <Box fontSize={'4xl'}>
           <Heading size={'lg'}>{data.title ? data.title:"No title" }</Heading>
           <Box fontSize={'35px'}>Tags: {data.tags && (data.tags.replaceAll('<','  ')).replaceAll('>',' ,')}</Box></Box>}
@@ -60,7 +60,13 @@ export default function Posts({ data1 }) {
           <Comments id={data.id}/>
         </AccordionPanel>
       </AccordionItem>}
-      {(index>2) && <>{ (data.id===question[0].accepted_answer_id) ?
+
+     
+
+      {(index>2) && <>
+        
+        
+      { (data.id===question[0].accepted_answer_id) ?
         <AccordionItem marginBottom={'4rem'} lineHeight='1.9'>
           <Box  ml='-2vw'><FaCheckDouble size={30}/></Box>
         <h2>

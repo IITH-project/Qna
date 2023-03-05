@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { Button, FormLabel, Input } from '@chakra-ui/react';
 import { useToast } from '@chakra-ui/react';
 
-export default function editor({id,Alldata,setData}) {
+export default function Editor({id,Alldata,setData}) {
     const editor = useRef(null);
 	const [content, setContent] = useState();
 

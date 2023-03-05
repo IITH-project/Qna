@@ -65,20 +65,16 @@ export default function Login() {
       <Flex flexDirection={'column'}>
       <label className={styles.text_label}>User id :</label>
       <InputGroup border='1px' borderRadius={'8px'} >
-          <InputLeftElement
-            pointerEvents="none"
-            children={<EmailIcon color="gray.300" />}
-          />
+      <InputLeftElement pointerEvents="none">
+          {<EmailIcon color="gray.300" />}</InputLeftElement>
           <Input  type="text" placeholder="user_id" backgroundColor={'#ffffff'}  value={email} onChange={e => setemail( e.target.value)} required/>
         </InputGroup>
     </Flex>
       <Flex flexDirection={'column'}>
       <label className={styles.text_label} >Password :</label>
       <InputGroup border='1px' borderRadius={'8px'} >
-      <InputLeftElement
-            pointerEvents="none"
-            children={<LockIcon color="gray.300" />}
-          />
+      <InputLeftElement pointerEvents="none">
+          {<LockIcon color="gray.300" />}</InputLeftElement>
           <Input type="password" placeholder="****" backgroundColor={'#ffffff'} value={password} onChange={e => setpassword( e.target.value)}  required/>
         </InputGroup>
     </Flex>

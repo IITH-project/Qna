@@ -4,9 +4,9 @@ import React from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';
 
-export default function editor({post_body,setbody}) {
+export default function Editor({post_body,setbody}) {
     const editor = useRef(null);
-	const [content, setContent] = useState(post_body);
+	const [content, setContent] = useState(post_body?post_body:'');
   return (
     <JoditEditor
 			ref={editor}

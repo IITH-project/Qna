@@ -2,14 +2,6 @@
 import jwt from 'jsonwebtoken'
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 const checkUser= handler => async (req,res)=>{
-    // console.log(req.headers['auth-token'])
-    // if(req.headers){
-    //     return handler(req,res);
-    // }
-    // else{
-    //     res.status(200).json({ error: "Incorrect Crediental" })
-    // }
-
 
     const token=getCookie('auth-token', { req, res });
     // console.log("from token"+token)
