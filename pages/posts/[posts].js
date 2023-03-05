@@ -31,6 +31,7 @@ export default function Posts({ data1 }) {
   // const [body, setbody] = useState()
   const router=useRouter()
 
+  
   return (
     <>
     <div className={styles.postMain}>
@@ -105,13 +106,13 @@ export default function Posts({ data1 }) {
       </div>
       <div className={styles1.right_bar_post}>
         <div className={styles1.posted}>
-        <div className={styles1.ele}>Posted By: </div>
-        <div className={styles1.ele}>Posted On: </div>
-        <div className={styles1.ele}>Score: </div>
-        <div className={styles1.ele}>Views: </div>
-        <div className={styles1.ele}>Answers: </div>
-        <div className={styles1.ele}>Comments: </div>
-        <div className={styles1.ele}>Tags: </div>
+        <div className={styles1.ele}>Posted By: {question[0].owner_display_name ?question[0].owner_display_name: "Anonymous user"  }</div>
+        <div className={styles1.ele}>Posted On: {question[0].creation_date ?question[0].creation_date: "Unavailable"}</div>
+        <div className={styles1.ele}>Score:  {question[0].score ?question[0].score: "0"}</div>
+        <div className={styles1.ele}>Views:  {question[0].view_count ?question[0].view_count: "0"}</div>
+        <div className={styles1.ele}>Answers:  {question[0].answer_count ?question[0].answer_count: "0"}</div>
+        <div className={styles1.ele}>Comments:  {question[0].comment_count ?question[0].comment_count: "0"}</div>
+        <div className={styles1.ele}>Tags: {question[0].tags && (question[0].tags.replaceAll('<','  ')).replaceAll('>',' ,')}</div>
         </div>
         {/* <div className={styles1.answered}>
         <div>Answred By:</div>

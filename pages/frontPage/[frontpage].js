@@ -1,30 +1,25 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-import { Box, Container, Flex, Input, InputGroup, InputLeftElement, Text } from '@chakra-ui/react'
-import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
-import Loding from '@/components/Loding'
-import { Search2Icon } from '@chakra-ui/icons'
-import axios from 'axios'
-import SearchModal from '@/components/SearchModal'
-import { motion as m } from "framer-motion"
-import { Router, useRouter } from 'next/router'
-import { Select } from '@chakra-ui/react'
+import Head from "next/head";
+import styles from "@/styles/Home.module.css";
+import {
+  Box,
+} from "@chakra-ui/react";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { motion as m } from "framer-motion";
+import { useRouter } from "next/router";
+import { Select } from "@chakra-ui/react";
 
 export default function Home({ data }) {
-  const router =useRouter()
-  const [sort, setsort] = useState("upvotes")
-  // console.log(sort)
-  // console.log(data)
-  const handleSort=()=>{
-    console.log(sort)
+  const router = useRouter();
+  const [sort, setsort] = useState("upvotes");
+  const handleSort = () => {
+    console.log(sort);
     router.push({
       pathname: `/frontPage/${router.query.frontpage}`,
       query: { sortby: sort },
-    })
-  }
+    });
+  };
   return (
     <>
       <Head>
@@ -33,83 +28,152 @@ export default function Home({ data }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <m.main className={styles.mainPage} initial={{ y: 90 }} animate={{ y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }}>
-      
-        <Box display={'flex'} mt='3em' h={'85%'} position={'relative'} top='70px' justifyContent={'space-between'} >
-          <Box display='flex' width='20%' justifyContent={'center'}>
-            <Box  mr={'2em'}>
-            <Select  value={sort} border={'2px solid green'} margin-left={'5vw'} onChange={e=>setsort(e.target.value)} placeholder='select sort'>
-            <option value='time'>time</option>
-            <option value='upvotes'>upvotes</option>
-          </Select>
-          <button onClick={handleSort}>Sort</button>
+      <m.main
+        className={styles.mainPage}
+        initial={{ y: 90 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.55, ease: "easeOut" }}
+      >
+        <Box
+          display={"flex"}
+          mt="3em"
+          h={"85%"}
+          position={"relative"}
+          top="70px"
+          justifyContent={"space-between"}
+        >
+          <Box display="flex" width="20%" justifyContent={"center"}>
+            <Box mr={"2em"}>
+              <Select
+                value={sort}
+                border={"2px solid green"}
+                margin-left={"5vw"}
+                onChange={(e) => setsort(e.target.value)}
+                placeholder="select sort"
+              >
+                <option value="time">time</option>
+                <option value="upvotes">upvotes</option>
+              </Select>
+              <button onClick={handleSort}>Sort</button>
               <nav className={styles.nav}>
                 <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="https://github.com/websiteSuraj/Qna#report" >Blog</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Contact Us</a></li>
+                  <li>
+                    <a href="#">Home</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/websiteSuraj/Qna#report">
+                      Blog
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/websiteSuraj/Qna#contribution-of-each-group-member-in-the-implementation-">
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">Contact Us</a>
+                  </li>
                 </ul>
               </nav>
             </Box>
           </Box>
 
-            <div className={styles.student}>
-              <img src='/img/student.png' alt="image"></img>
-            </div>
-          <Box maxHeight={'80vh'} overflow='auto'
+          <div className={styles.student}>
+            <img src="/img/student.png" alt="image"></img>
+          </div>
+          <Box
+            maxHeight={"80vh"}
+            overflow="auto"
             css={{
-              '&::-webkit-scrollbar': {
-                width: '4px',
+              "&::-webkit-scrollbar": {
+                width: "4px",
               },
-              '&::-webkit-scrollbar-track': {
-                width: '6px',
+              "&::-webkit-scrollbar-track": {
+                width: "6px",
               },
             }}
+            boxSizing="border-box"
+            padding="0 33px"
+            width={"80%"}
+          >
+            {data?.length > 0 ? (
+              data.map((data, index) => {
+                return index % 2 == 0 ? (
+                  <div className={styles.innerbox_even} key={index}>
+                    <div className={styles.inner1}>
+                      <div className={styles.innner}>
+                        {data.score && data.score} Score
+                      </div>
+                      <div className={styles.innner}>
+                        {" "}
+                        {data.answer_count && data.answer_count} Answers
+                      </div>
+                      <div className={styles.innner}>
+                        {data.view_count && data.view_count} Views
+                      </div>
+                    </div>
+                    <div className={styles.inner2}>
+                      <div className={styles.innner2}>
+                        <Link
+                          href={`/posts/${data.id}`}
+                          className={styles.title}
+                        >
+                          {data.title ? data.title : <div>No title </div>}
+                        </Link>
+                        <div className={styles.post_date}>posted on :</div>
+                        <div
+                          className={styles.para}
+                          dangerouslySetInnerHTML={{
+                            __html: data.body.substring(0, 300),
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className={styles.innerbox_odd} key={index}>
+                    <div className={styles.inner1}>
+                      <div className={styles.innner}>
+                        {data.score && data.score} Score
+                      </div>
+                      <div className={styles.innner}>
+                        {" "}
+                        {data.answer_count && data.answer_count} Answers
+                      </div>
+                      <div className={styles.innner}>
+                        {data.view_count && data.view_count} Views
+                      </div>
+                    </div>
 
-
-            boxSizing='border-box' padding='0 33px' width={'80%'}>
-            {data?.length > 0 ? data.map((data, index) => {
-              return (index % 2 == 0 ? (<div className={styles.innerbox_even} key={index}>
-                <div className={styles.inner1}>
-                  <div className={styles.innner}>{data.score && data.score} Score</div>
-                  <div className={styles.innner}> {data.answer_count && data.answer_count} Answers</div>
-                  <div className={styles.innner}>{data.view_count && data.view_count} Views</div>
-                </div>
-                <div className={styles.inner2}>
-                  <div className={styles.innner2}>
-                    <Link href={`/posts/${data.id}`} className={styles.title} >{data.title ? data.title : <div>No title  </div>}</Link>
-                  <div className={styles.post_date}>
-                    posted on :
+                    <div className={styles.inner2}>
+                      <div className={styles.innner2}>
+                        <Link
+                          href={`/posts/${data.id}`}
+                          className={styles.title}
+                        >
+                          {data.title ? data.title : <div>No title </div>}
+                        </Link>
+                        <div className={styles.post_date}>posted on:</div>
+                        <div
+                          className={styles.para}
+                          dangerouslySetInnerHTML={{
+                            __html: data.body.substring(0, 300),
+                          }}
+                        />
+                      </div>
+                    </div>
                   </div>
-                    <div className={styles.para} dangerouslySetInnerHTML={{ __html: data.body.substring(0, 300) }} />
-                  </div>
-                </div>
-              </div>) : (<div className={styles.innerbox_odd} key={index}>
-                <div className={styles.inner1}>
-                <div className={styles.innner}>{data.score && data.score} Score</div>
-                  <div className={styles.innner}> {data.answer_count && data.answer_count} Answers</div>
-                  <div className={styles.innner}>{data.view_count && data.view_count} Views</div>
-                </div>
-
-                <div className={styles.inner2}>
-                  <div className={styles.innner2}>
-                    <Link href={`/posts/${data.id}`} className={styles.title} >{data.title ? data.title : <div>No title </div>}</Link>
-                  <div className={styles.post_date}>
-                    posted on:
-                  </div>
-                    <div className={styles.para} dangerouslySetInnerHTML={{ __html: data.body.substring(0, 300) }} />
-                  </div>
-                </div>
-              </div>))
-            }) : <div>No post exits in database</div>}
+                );
+              })
+            ) : (
+              <div>No post exits in database</div>
+            )}
           </Box>
         </Box>
       </m.main>
     </>
-  )
+  );
 }
-
 
 export async function getServerSideProps(context) {
   function containsOnlyNumbers(str) {
@@ -118,16 +182,15 @@ export async function getServerSideProps(context) {
 
   if (containsOnlyNumbers(context.query.frontpage) == false) {
     var { data } = await axios.post(`http://127.0.0.1:3000/api/searchbytags`, {
-      queryData: context.query
-    })
+      queryData: context.query,
+    });
   }
 
   if (containsOnlyNumbers(context.query.frontpage)) {
-    var { data } = await axios.get(`http://127.0.0.1:3000/api/hello?search=${context.query.frontpage}`)
+    var { data } = await axios.get(
+      `http://127.0.0.1:3000/api/hello?search=${context.query.frontpage}`
+    );
   }
 
-  return { props: { data } }
+  return { props: { data } };
 }
-
-
-
