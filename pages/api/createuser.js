@@ -9,17 +9,17 @@ export default async function handler(req, res) {
     // console.log(account)
     console.log('hi')
     let a = [account,0,req.body.display_name]
-    let query = "insert into users(account_id,reputation,display_name,creation_date,last_access_date) values ($1,$2,$3,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)"
+    let query = "insert into users(account_id,reputation,display_name,creation_date,last_access_date) values ($1,$2,$3,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP) RETURNING *"
     pool.query(query,a ,(error, results) => {
       if (error) {
         throw error
       }
       console.log('successfully inserted')
-      res.status(200).send("inserted succesfully")
+      res.status(200).send(results.rows)
     })
   }
   else{
     res.send({error:true,message:"this method is not allowed"})
-  }
+  }
 }
 
