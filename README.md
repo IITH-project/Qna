@@ -1,38 +1,136 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# REPORT 
 
-## Getting Started
+## A short 2-3 para summary of how you built the application :
 
-First, run the development server:
+We built our application after careful observation of the database. After a few discussions, we decided to make our application using **React(Next.js)** with a database server as Node.js. After assigning the roles, we learned **Html, CSS, Javascript, and a bit of React**. We decided to use **Figma for designing** our frontend pages.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+After analyzing the requirements, we decided to make three pages: a **Home-page**, a **login page**, and a **sign-up page** .
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+One of our group with web background was interested in using **Chakra-UI** for the front end of our application. We decided on **Next.js** as it enables us to create full-stack web applications with **pool package** for connecting to our backend with the database(Postgres). We wrote our **backend logic in Node.js**. We also used **JSON web token to encrypt** our id, which we store in cookies for authentication. Our sensitive data comes from the **local.env** file.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Overall system architecture :
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### WEBPAGES :
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Home page** : The front page of the application used for user interaction .
 
-## Learn More
+**Login page** : The page for authenticating the user .
 
-To learn more about Next.js, take a look at the following resources:
+**Sign-up page** :The page for registering new users .
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**display_query page** : The page for displaying the results of the query.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**profile page** : The page showing all the user information for a user_id .
 
-## Deploy on Vercel
+**post page** : displays all posts for a given post_id .
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Middleware** : verifies cookies(JSON web token) with a local environment secret key .
+
+### APIs :
+
+**autocompletion.js** : autocompletion of tag-name and display_name .
+
+**crComm.js** : create comment.
+
+**createanswer.js**   : create answers(post) for a given post_id .
+
+**createnewpost.js** : create new post .
+
+**createuser.js** : register new user .
+
+**editpost.js** : edit the post for a given post_id .
+
+**getComment.js** : get all the comments for a given post_id .
+
+**getuser.js** : get the user information for a given user_id.
+
+**giveanswers.js** : give the answers for a given post_id(parent_id).
+
+**hello.js** : displays the top 5 queries in display_query page(at the start) .
+
+**login.js** : login of the user and setting up the cookie .
+
+**searchbytags** : gets all the post with the given tags .
+
+**userpost.js** : gets all the posts for a given user_id(owner_user_id).
+
+**deletepost.js** : delete a post for given post_id and user_id .
+
+
+
+---
+## Programming languages used for different components :
+
+**DESIGNING :** Figma
+
+**FRONTEND:** HTML , CSS , Next.js ,Chakra UI
+
+**BACKEND:** Javascript , Node.js , Next.js
+
+**DATABASE:** Postgres
+
+---
+
+**NOTE :**
+
+**Chakra UI:** Chakra UI is a simple, modular and accessible component library that gives the building blocks that is needed to build React applications.Chakra UI provides more components, improved styling API, accessibility, and intuitive component APIs than Theme UI. 
+
+**Next.js:** Next. js is a React framework that enables several extra features, including server-side rendering and generating static websites.
+
+**Figma:** Figma is a powerful web-based design tool that helps you create anything, websites, applications, logos, and much more
+
+---
+
+---
+
+## Contribution of each group member in the implementation :
+
+**Team members :** Suraj Kumar , Shivanshu ,Karthik from AI21 .
+
+**Suraj Kumar :** 
+
+1)integrating APIs with the frontend and checking the behaviour of rendering of components(login page ,signup page etc.) using Next.js and Chakra-UI.
+
+2)creating cookies at the time of signup(Middleware).
+
+3)edit and delete post content/tags(API).
+
+4)CSS of search query component and post pages .
+
+5)Fetching upvotes , downvotes and views for every post .
+
+6)Javascript of all the components .
+
+7)managing the github repository and git.
+
+**Shivanshu :** 
+
+1)Designing of pages using Figma .
+
+2)CSS of Home page , Display_query page , profile page , post page .
+
+3)Registering an new user(API).
+
+4)Fetching the comments for every posts and creating a new comment for a post.
+
+5)CSS of Qna , Search Here ,Nav-Bar ,Right-side Bar,Login components .
+
+**Karthik :**
+
+1)Analysing the Database .
+
+2)CSS of Sign-up and Login pages .
+
+3)autocompletion for tags and display_name(APIs) .
+
+4)Search Posts(using user_id ,tags.)(APIs) and Create Posts.
+
+5)Fetching all the answers for a given post_id(APIs).
+
+
+---
+
