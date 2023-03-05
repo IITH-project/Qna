@@ -83,6 +83,8 @@ border-radius: 0px;
 
 .fontPageColor{
   color:  white;
+  /* background-color: #84cdbf; */
+
 }
 
 .searcHere{
@@ -111,6 +113,9 @@ border-radius: 0px;
 .leftbox{
   display: flex;
   flex-direction: column;
+  width: 15%;
+  margin-left: 3vw;
+  /* border: 2px solid green; */
 }
 
 .student{
@@ -141,11 +146,13 @@ border-radius: 0px;
 
 }
 
-/* .innerbox_odd div{
-  color: azure;
-} */
-
 .para{
+  /* border: 2px solid rgb(235, 12, 239); */
+  padding: 0rem 0.8rem 0.4rem 0.6rem;
+
+}
+
+.para_posts{
   /* border: 2px solid rgb(235, 12, 239); */
   color: azure;
   margin-left: 0.5vw;
@@ -248,16 +255,10 @@ justify-content: center;
 
 .post_date{
   /* border: 2px solid rgb(194, 234, 36); */
-  position: relative;
-  width: 12vw;
-  /* margin-bottom: 2px; */
+  font-weight:600;
   display: flex;
-  /* align-items: end; */
-  padding-bottom: 0.5vh;
-  border-radius: 0px 0px 40px 0px;
-  top: 12vh;
-  /* bottom: 0vh; */
-  /* align-items:right; */
+  font-size: 0.9rem;
+
 }
 
 .nav{

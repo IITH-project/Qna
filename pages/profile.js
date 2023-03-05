@@ -65,10 +65,9 @@ export default function profile() {
           return (
             <div className={styles.profileDiv}>
               <h2 className={styles.profile_title}>{post.title?post.title:"No title" } </h2>
-              {/* <h3>{post.tags && post.tags}</h3> */}
-              <ProfileEdit post={post} setuserPost={setuserPost} userPost={userPost} />
+              <h3>tags: {post.tags && (post.tags.replaceAll('<',' ')).replaceAll('>','')}</h3>
+              <ProfileEdit post={post}  setuserPost={setuserPost} userPost={userPost} />
               <div  dangerouslySetInnerHTML={{ __html: post.body }} />
-              
             </div>
           )
         })}

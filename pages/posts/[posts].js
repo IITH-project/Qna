@@ -23,6 +23,7 @@ const Editor =dynamic(()=>import('@/components/RichtextEdit'),{
 
 
 export default function Posts({ data1 }) {
+  // console.log(data1)
   const [richtext, setrichtext] = useState(false)
   const [data2, setdata] = useState(data1)
   // const [body, setbody] = useState()
@@ -34,14 +35,17 @@ export default function Posts({ data1 }) {
       <div className={styles.first_div_post}>
       {data2.map((data)=>{
         return (
-          
       <Accordion allowToggle  width={'90%'} margin={'auto'}>
+        {(String(data.id) === router.query.posts) && <Box fontSize={'4xl'}>
+          <Heading size={'lg'}>{data.title ? data.title:"No title" }</Heading>
+          <Box >Tags: {(data.tags.replaceAll('<','  ')).replaceAll('>',' ,')}</Box></Box>}
+        { (String(data.id) !== router.query.posts) &&
+        
       <AccordionItem marginBottom={'4rem'}>
         <h2>
           <Box as="span" flex="1" textAlign="left">
-            <Heading size={'lg'}>{data.title ? data.title:"No title" }</Heading>
-           { data.tags ? <h3>{data.tags}</h3>:""}
-            <Box  fontSize={'1.3em'} color={'black'} className={styles.para}  dangerouslySetInnerHTML={{ __html: data.body}}/>
+            
+            <Box  fontSize={'1.3em'} color={'black'} className={styles.para_posts}  dangerouslySetInnerHTML={{ __html: data.body}}/>
           </Box>
         </h2>
         <AccordionButton  paddingLeft="0px">
@@ -52,6 +56,7 @@ export default function Posts({ data1 }) {
           <Comments id={data.id}/>
         </AccordionPanel>
       </AccordionItem>
+      }
     </Accordion>
         )
       })}

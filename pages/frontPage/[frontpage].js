@@ -37,8 +37,8 @@ export default function Home({ data }) {
       
         <Box display={'flex'} mt='3em' h={'85%'} position={'relative'} top='70px' justifyContent={'space-between'} >
           <div classname={styles.leftbox}>
-            <Box width={'13rem'} mr={'2em'}>
-            <Select  value={sort} onChange={e=>setsort(e.target.value)} placeholder='select sort'>
+            <Box  mr={'2em'}>
+            <Select  value={sort} border={'2px solid green'} margin-left={'5vw'} onChange={e=>setsort(e.target.value)} placeholder='select sort'>
             <option value='time'>time</option>
             <option value='upvotes'>upvotes</option>
           </Select>
@@ -78,10 +78,10 @@ export default function Home({ data }) {
                 <div className={styles.inner2}>
                   <div className={styles.innner2}>
                     <Link href={`/posts/${data.id}`} className={styles.title} >{data.title ? data.title : <div>No title  </div>}</Link>
-                    <div className={styles.para} dangerouslySetInnerHTML={{ __html: data.body.substring(0, 300) }} />
-                  </div>
                   <div className={styles.post_date}>
                     posted on :
+                  </div>
+                    <div className={styles.para} dangerouslySetInnerHTML={{ __html: data.body.substring(0, 300) }} />
                   </div>
                 </div>
               </div>) : (<div className={styles.innerbox_odd} key={index}>
@@ -94,10 +94,10 @@ export default function Home({ data }) {
                 <div className={styles.inner2}>
                   <div className={styles.innner2}>
                     <Link href={`/posts/${data.id}`} className={styles.title} >{data.title ? data.title : <div>No title </div>}</Link>
-                    <div className={styles.para} dangerouslySetInnerHTML={{ __html: data.body.substring(0, 300) }} />
-                  </div>
                   <div className={styles.post_date}>
                     posted on:
+                  </div>
+                    <div className={styles.para} dangerouslySetInnerHTML={{ __html: data.body.substring(0, 300) }} />
                   </div>
                 </div>
               </div>))
