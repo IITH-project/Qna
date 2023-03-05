@@ -18,12 +18,11 @@ export default async function handler(req, res) {
       if (error) {
         throw error
       }
-      // console.log('successfully inserted')
       res.status(200).send(results.rows)
     })
   }
   else{
     res.send({error:true,message:"this method is not allowed"})
-  }
+  }
 }
 

@@ -103,7 +103,21 @@ export default function Posts({ data1 }) {
         {richtext && <Box width={'75%' } m='auto'  borderBottom={'2px solid #d6c5c5'} boxSizing='border-box' padding={'10px'}><Editor id={router.query.posts} Alldata={data1} setData={setdata}/></Box>}
     <Button onClick={()=>setrichtext(!richtext)} display='block' m={'auto'} mb='2rem'>Post Your Answer</Button>
       </div>
-      <div className={styles.right_bar_post}>rightSidebar</div>
+      <div className={styles1.right_bar_post}>
+        <div className={styles1.posted}>
+        <div className={styles1.ele}>Posted By: </div>
+        <div className={styles1.ele}>Posted On: </div>
+        <div className={styles1.ele}>Score: </div>
+        <div className={styles1.ele}>Views: </div>
+        <div className={styles1.ele}>Answers: </div>
+        <div className={styles1.ele}>Comments: </div>
+        <div className={styles1.ele}>Tags: </div>
+        </div>
+        {/* <div className={styles1.answered}>
+        <div>Answred By:</div>
+        <div>Answred On:</div>
+        </div> */}
+        </div>
     </div>
     {/* {richtext && <Box width={'60%'}><RichText id={router.query.posts} Alldata={data} setData={setdata} /></Box>} */}
     
