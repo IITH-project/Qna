@@ -34,6 +34,6 @@ export default async function handler(req, res) {
   }
 }
 else{
-  res.send({error:true,message:"this method is not allowed"})
+  res.send({error:true,message:"this method is not allow"})
 }
 }

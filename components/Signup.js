@@ -55,18 +55,11 @@ export default function Signup() {
 
   return (
     <>
-    <img className = {styles.signup_image} src="signup.webp" alt="fb_image"></img>
+    {/* <img className = {styles.signup_image} src="signup.webp" alt="fb_image"></img> */}
     <h3 className={styles.label}>Signup</h3>
     <form className = {styles.form}onSubmit={handleSubmit}>
       <Flex height={'18vh'} flexDirection={'column'} justifyContent={'space-between'}>
-      <label className={styles.text_label}>User id :</label>
-      <InputGroup border='1px' borderRadius={'8px'} >
-      <InputLeftElement
-            pointerEvents="none"
-          ><EmailIcon color="gray.300" /></InputLeftElement>
-          <Input type="text" placeholder="user_id" backgroundColor={'#ffffff'} value={email} onChange={e => setemail( e.target.value)} required/>
-        </InputGroup>
-        <label className={styles.text_label}>Password :</label>
+      <label >Email</label>
       <InputGroup border='1px' borderRadius={'8px'} >
           <InputLeftElement
             pointerEvents="none"
@@ -74,7 +67,14 @@ export default function Signup() {
           />
           <Input type="text" placeholder="*******" backgroundColor={'#ffffff'} value={password} onChange={e => setpassword( e.target.value)} required/>
         </InputGroup>
-
+        <label >password</label>
+      <InputGroup border='1px' borderRadius={'8px'} >
+          <InputLeftElement
+            pointerEvents="none"
+            children={<EmailIcon color="gray.300" />}
+          />
+          <Input type="text" placeholder="********" value={password} onChange={e => setpassword( e.target.value)} required/>
+        </InputGroup>
     </Flex>
     <Button
                 borderRadius={0}

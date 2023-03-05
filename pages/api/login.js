@@ -5,6 +5,12 @@ import checkUser from "@/middleware/checktoken"
 import jwt from 'jsonwebtoken'
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 
+export const config = {
+    api: {
+      externalResolver: true,
+    },
+  }
+  
 const handler= async (req,res)=>{
     if(req.method=='POST'){
         const {email,password}=req.body

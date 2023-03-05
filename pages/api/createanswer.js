@@ -1,7 +1,13 @@
 import pool  from "../../db"
 
 import checkUser from "@/middleware/checktoken"
+export const config = {
+  api: {
+    externalResolver: true,
+  },
+}
 const handler=(req, res)=> {
+  if(req.method=='POST'){
     let parent_id = req.body.id
     let user = req.user_id
     let post =  2
@@ -16,5 +22,9 @@ const handler=(req, res)=> {
       res.status(200).send(results.rows)
     })
   }
+  else{
+    res.send({error:true,message:"this method is not allow"})
+  }
+}
 
  export default checkUser(handler)

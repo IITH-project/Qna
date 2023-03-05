@@ -38,7 +38,7 @@ export default function Posts({ data1 }) {
       <Accordion allowToggle  width={'90%'} margin={'auto'}>
         {(String(data.id) === router.query.posts) && <Box fontSize={'4xl'}>
           <Heading size={'lg'}>{data.title ? data.title:"No title" }</Heading>
-          <Box >Tags: {(data.tags.replaceAll('<','  ')).replaceAll('>',' ,')}</Box></Box>}
+          <Box >Tags: {data.tags && (data.tags.replaceAll('<','  ')).replaceAll('>',' ,')}</Box></Box>}
         { (String(data.id) !== router.query.posts) &&
         
       <AccordionItem marginBottom={'4rem'}>
