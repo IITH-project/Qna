@@ -75,10 +75,6 @@ export default function Posts({ data1 }) {
         <div className={styles1.ele}>Comments: </div>
         <div className={styles1.ele}>Tags: </div>
         </div>
-        {/* <div className={styles1.answered}>
-        <div>Answred By:</div>
-        <div>Answred On:</div>
-        </div> */}
         </div>
     </div>
     {/* {richtext && <Box width={'60%'}><RichText id={router.query.posts} Alldata={data} setData={setdata} /></Box>} */}
