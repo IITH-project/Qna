@@ -14,7 +14,7 @@ const checkUser= handler => async (req,res)=>{
     const token=getCookie('auth-token', { req, res });
     console.log("from token"+token)
     if(!token){
-        res.send({error:'please authenticate first'})
+        res.send({error:true,message:'please authenticate first'})
     }
 
     try {
@@ -23,7 +23,7 @@ const checkUser= handler => async (req,res)=>{
     req.user_id=data
     handler(req,res)
 } catch (error) {
-    res.send({error:'please authenticate first'})
+    res.send({error:true,message:'please authenticate first'})
 }
 }
 export default checkUser;

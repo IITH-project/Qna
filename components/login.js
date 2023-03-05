@@ -18,6 +18,15 @@ export default function Login() {
 
   const handleSubmit= async (e)=>{
     e.preventDefault()
+    if(email!==password){
+      return  toast({
+          title: "Password",
+          description: "Password is not matching",
+          status: 'error',
+          duration: 3000,
+          isClosable: true,
+        })
+    }
     const {data}=await axios.post('/api/login',{
       email,
       password
