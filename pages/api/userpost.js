@@ -1,10 +1,15 @@
 import pool  from "../../db"
 
 import checkUser from "@/middleware/checktoken"
+
+export const config = {
+  api: {
+    externalResolver: true,
+  },
+}
+
 const handler=async (req, res)=> {
-    // console.log("aaklha"+req.user_id)
     let a = req.user_id
-    // console.log(:)
     let query = "select * from posts where owner_user_id = $1 order by creation_date"
     pool.query(query,[a] ,(error, results) => {
       if (error) {

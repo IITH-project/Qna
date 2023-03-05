@@ -25,7 +25,7 @@ border-radius: 0px;
 }
 .fb_image{
   /* size : 200 px ; */
-  height : 200px ;
+  height : 150px ;
   margin-bottom : 35px ;
 }
 .label_welcome{
@@ -33,10 +33,10 @@ border-radius: 0px;
   font-size: 30px;
 }
 .form_div{
-  background-color: #ddf4ff;
+  /* background-color: #ddf4ff; */
   border: 1px solid black;
   width: 567px;
-  height: 621px;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -403,4 +403,13 @@ box-shadow: 5px 7px 10px rgba(0,0,0,0.7);
   display: inline;
   font-size: 27px;
   font-weight: 700;
+}
+
+.go{
+  position: absolute;
+  right: 12px;
+  z-index: 5;
+  background-color: #3fc7be;
+  padding: 8px;
+  border-radius: 2px;
 }

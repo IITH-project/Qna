@@ -10,6 +10,7 @@ import {
   Button,
   Input,
 } from "@chakra-ui/react";
+import { FaCheckDouble } from 'react-icons/fa';
 import styles from "@/styles/Home.module.css";
 import styles1 from '@/styles/posts.module.css';
 import { FaComment } from "react-icons/fa";
@@ -26,6 +27,7 @@ export default function Posts({ data1 }) {
   // console.log(data1)
   const [richtext, setrichtext] = useState(false)
   const [data2, setdata] = useState(data1)
+  const [question, setquestion] = useState(data1.slice(0,1))
   // const [body, setbody] = useState()
   const router=useRouter()
 
@@ -33,15 +35,16 @@ export default function Posts({ data1 }) {
     <>
     <div className={styles.postMain}>
       <div className={styles.first_div_post}>
-      {data2.map((data)=>{
+      {data2.map((data,index)=>{
         return (
       <Accordion allowToggle  width={'90%'} margin={'auto'}>
         {(String(data.id) === router.query.posts) && <Box fontSize={'4xl'}>
           <Heading size={'lg'}>{data.title ? data.title:"No title" }</Heading>
-          <Box >Tags: {data.tags && (data.tags.replaceAll('<','  ')).replaceAll('>',' ,')}</Box></Box>}
+          <Box fontSize={'35px'}>Tags: {data.tags && (data.tags.replaceAll('<','  ')).replaceAll('>',' ,')}</Box></Box>}
         { (String(data.id) !== router.query.posts) &&
-        
-      <AccordionItem marginBottom={'4rem'}>
+        <>
+        {(index==2) && <AccordionItem marginBottom={'4rem'} lineHeight='1.9'>
+
         <h2>
           <Box as="span" flex="1" textAlign="left">
             
@@ -55,7 +58,42 @@ export default function Posts({ data1 }) {
         <AccordionPanel className={styles.comment} pb={4} paddingLeft="41px">
           <Comments id={data.id}/>
         </AccordionPanel>
-      </AccordionItem>
+      </AccordionItem>}
+      {(index>2) && <>{ (data.id===question[0].accepted_answer_id) ?
+        <AccordionItem marginBottom={'4rem'} lineHeight='1.9'>
+          <Box  ml='-2vw'><FaCheckDouble size={30}/></Box>
+        <h2>
+          <Box as="span" flex="1" textAlign="left">
+            
+            <Box  fontSize={'1.3em'} color={'black'} className={styles.para_posts}  dangerouslySetInnerHTML={{ __html: data.body}}/>
+          </Box>
+        </h2>
+        <AccordionButton  paddingLeft="0px">
+          <AccordionIcon />
+          Comments
+         </AccordionButton>
+        <AccordionPanel className={styles.comment} pb={4} paddingLeft="41px">
+          <Comments id={data.id}/>
+        </AccordionPanel>
+        </AccordionItem>:
+        <AccordionItem marginBottom={'4rem'} lineHeight='1.9'>
+        <h2>
+          <Box as="span" flex="1" textAlign="left">
+            
+            <Box  fontSize={'1.3em'} color={'black'} className={styles.para_posts}  dangerouslySetInnerHTML={{ __html: data.body}}/>
+          </Box>
+        </h2>
+        <AccordionButton  paddingLeft="0px">
+          <AccordionIcon />
+          Comments
+         </AccordionButton>
+        <AccordionPanel className={styles.comment} pb={4} paddingLeft="41px">
+          <Comments id={data.id}/>
+        </AccordionPanel>
+        </AccordionItem>}
+      
+      </>}
+      </>
       }
     </Accordion>
         )

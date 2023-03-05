@@ -46,7 +46,7 @@ export default function Home({ data }) {
               <nav className={styles.nav}>
                 <ul>
                   <li><a href="#">Home</a></li>
-                  <li><a href="#">Blog</a></li>
+                  <li><a href="https://github.com/websiteSuraj/Qna#report" >Blog</a></li>
                   <li><a href="#">About</a></li>
                   <li><a href="#">Contact Us</a></li>
                 </ul>

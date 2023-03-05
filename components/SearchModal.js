@@ -166,12 +166,17 @@ export default function SearchModal() {
                   }}
                 />
                 <Link
-                  position={"absolute"}
-                  right="3px"
-                  bgGradient="linear(to-r, teal.400, teal.600)"
+                  className={styles.go}
                   href={`/frontPage/${tags.map((e) => (e) ).join('&')}`}
                   onClick={onClose}
                 >
+
+{/* position: absolute;
+    right: 12px;
+    z-index: 5;
+    background-color: #3fc7be;
+    padding: 8px;
+    border-radius: 2px; */}
                   Go
                 </Link>
               </div>
@@ -198,8 +203,8 @@ export default function SearchModal() {
                           return (
                             <Box key={index}>
                               <Text pt="2" fontSize="sm">
+                                <Text>id: {data.id}</Text>
                                 <Button onClick={check3}>
-                                <h3>id: {data.id}</h3>
                                 <Text mx={'1rem'}>
                                   {data.tag_name}
                                   </Text>

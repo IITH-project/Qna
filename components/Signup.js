@@ -37,7 +37,7 @@ export default function Signup() {
 
   return (
     <>
-    {/* <img className = {styles.signup_image} src="signup.webp" alt="fb_image"></img> */}
+    <img className = {styles.signup_image} src="signup.webp" alt="fb_image"></img>
     <h3 className={styles.label}>Signup</h3>
     <form className = {styles.form} onSubmit={handleSubmit}>
       <Flex height={'18vh'} flexDirection={'column'} justifyContent={'space-between'}>
@@ -47,7 +47,7 @@ export default function Signup() {
             pointerEvents="none"
             children={<EmailIcon color="gray.300" />}
           />
-          <Input type="text" backgroundColor={'#ffffff'} value={email} onChange={e => setemail( e.target.value)} required/>
+          <Input type="text" backgroundColor={'#ffffff'} placeholder="enter name" value={email} onChange={e => setemail( e.target.value)} required/>
         </InputGroup>
         <label >password</label>
       <InputGroup border='1px' borderRadius={'8px'} >
