@@ -15,18 +15,26 @@ export default function Signup() {
 
 
   const handleSubmit= async (e)=>{
-    e.preventDefault()
-    toast({
-        title: "it is in working",
-        description: "We've created your account for you.",
+    const {data}=await axios.post('/api/createuser',{
+      email,
+      password
+    })
+    console.log(data);
+    if(data.error){
+      toast({
+        title: data.message,
+        description: "We are unable to create your account please try again.",
         status: 'error',
         duration: 3000,
         isClosable: true,
       })
-    // const {data}=await axios.post('/api/login',{
-    //   email,
-    //   password
-    // })
+    }
+    else{
+    localStorage.setItem("userData",JSON.stringify(data[0]))
+    setemail('')
+    setpassword('')
+    Router.back()
+    }
     // console.log(data)
     // if(data.error){
     //   toast({
@@ -80,7 +88,6 @@ export default function Signup() {
                 Register
               </Button>
     </form>
-    
     </>
   )
 }

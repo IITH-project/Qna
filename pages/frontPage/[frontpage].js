@@ -36,7 +36,7 @@ export default function Home({ data }) {
       <m.main className={styles.mainPage} initial={{ y: 90 }} animate={{ y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }}>
       
         <Box display={'flex'} mt='3em' h={'85%'} position={'relative'} top='70px' justifyContent={'space-between'} >
-          <div classname={styles.leftbox}>
+          <Box display='flex' width='20%' justifyContent={'center'}>
             <Box  mr={'2em'}>
             <Select  value={sort} border={'2px solid green'} margin-left={'5vw'} onChange={e=>setsort(e.target.value)} placeholder='select sort'>
             <option value='time'>time</option>
@@ -52,10 +52,11 @@ export default function Home({ data }) {
                 </ul>
               </nav>
             </Box>
+          </Box>
+
             <div className={styles.student}>
               <img src='/img/student.png' alt="image"></img>
             </div>
-          </div>
           <Box maxHeight={'80vh'} overflow='auto'
             css={{
               '&::-webkit-scrollbar': {
