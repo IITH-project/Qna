@@ -115,7 +115,7 @@ Karthik AI21BTECH11024 .
 
 **Shivanshu:** 
 
-1)Designing of pages using Figma. <a href='http://localhost:3000/'> figma</a>
+1)Designing of pages using Figma. <a href='https://www.figma.com/file/am7xEslU236FPvMpPfpMQ6/Page1?node-id=0-1'> figma</a>
 
 2)CSS of Home page, Display_query page, profile page, and post page.
 
