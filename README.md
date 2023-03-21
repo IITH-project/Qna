@@ -4,7 +4,7 @@
 
 We built our application after careful observation of the database. After a few discussions, we decided to make our application using **React(Next.js)** with a database server as Node.js. After assigning the roles, we learned **Html, CSS, Javascript, and a bit of React**. We decided to use **Figma for designing** our frontend pages.
 
-After analyzing the requirements, we made three pages: a **Home-page**, a **login page**, and a **sign-up page** .
+After analyzing the requirements, we made three main pages: a **Home-page**, a **login page**, and a **sign-up page** .
 
 One of our group members with web background was interested in using **Chakra-UI** for the front end of our application. We decided on **Next.js** as it enables us to create full-stack web applications with **pool package** for connecting to our backend with the database(Postgres). We wrote our **backend logic in Node.js**. We also used **JSON web token to encrypt** our id, which we store in cookies for authentication. Our sensitive data comes from the **local.env** file.
 
