@@ -123,7 +123,7 @@ Karthik AI21BTECH11024 .
 
 4)Fetching the comments for every post and creating a new comment for a post.
 
-5)CSS of Qna, Search Here, Nav-Bar, Right-side Bar, and Login components.
+5)CSS of Qna, Search Here, Nav-Bar, Right-side post info Bar, and Login components.
 
 **Karthik:**
 
